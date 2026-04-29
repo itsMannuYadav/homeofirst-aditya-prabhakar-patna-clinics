@@ -9,9 +9,7 @@ export default defineConfig({
   plugins: [
     TanStackRouterVite(),
     tanstackStart({
-      deployment: {
-        preset: "vercel",
-      },
+      ssr: false,
     }),
     react(),
     tsconfigPaths(),
