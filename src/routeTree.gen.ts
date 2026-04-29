@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TreatmentsRouteImport } from './routes/treatments'
 import { Route as StoriesRouteImport } from './routes/stories'
+import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as FaqsRouteImport } from './routes/faqs'
 import { Route as DoctorRouteImport } from './routes/doctor'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -25,6 +26,11 @@ const TreatmentsRoute = TreatmentsRouteImport.update({
 const StoriesRoute = StoriesRouteImport.update({
   id: '/stories',
   path: '/stories',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FaqsRoute = FaqsRouteImport.update({
@@ -59,6 +65,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/doctor': typeof DoctorRoute
   '/faqs': typeof FaqsRoute
+  '/gallery': typeof GalleryRoute
   '/stories': typeof StoriesRoute
   '/treatments': typeof TreatmentsRoute
 }
@@ -68,6 +75,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/doctor': typeof DoctorRoute
   '/faqs': typeof FaqsRoute
+  '/gallery': typeof GalleryRoute
   '/stories': typeof StoriesRoute
   '/treatments': typeof TreatmentsRoute
 }
@@ -78,6 +86,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/doctor': typeof DoctorRoute
   '/faqs': typeof FaqsRoute
+  '/gallery': typeof GalleryRoute
   '/stories': typeof StoriesRoute
   '/treatments': typeof TreatmentsRoute
 }
@@ -89,6 +98,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/doctor'
     | '/faqs'
+    | '/gallery'
     | '/stories'
     | '/treatments'
   fileRoutesByTo: FileRoutesByTo
@@ -98,6 +108,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/doctor'
     | '/faqs'
+    | '/gallery'
     | '/stories'
     | '/treatments'
   id:
@@ -107,6 +118,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/doctor'
     | '/faqs'
+    | '/gallery'
     | '/stories'
     | '/treatments'
   fileRoutesById: FileRoutesById
@@ -117,6 +129,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   DoctorRoute: typeof DoctorRoute
   FaqsRoute: typeof FaqsRoute
+  GalleryRoute: typeof GalleryRoute
   StoriesRoute: typeof StoriesRoute
   TreatmentsRoute: typeof TreatmentsRoute
 }
@@ -135,6 +148,13 @@ declare module '@tanstack/react-router' {
       path: '/stories'
       fullPath: '/stories'
       preLoaderRoute: typeof StoriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/faqs': {
@@ -181,18 +201,10 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   DoctorRoute: DoctorRoute,
   FaqsRoute: FaqsRoute,
+  GalleryRoute: GalleryRoute,
   StoriesRoute: StoriesRoute,
   TreatmentsRoute: TreatmentsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { createStart } from '@tanstack/react-start'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-  }
-}
