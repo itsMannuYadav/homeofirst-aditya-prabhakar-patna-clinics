@@ -31,9 +31,19 @@ const REELS = [
   },
 ];
 
-export function SocialGallery({ showHeading = true }: { showHeading?: boolean }) {
+export function SocialGallery({ 
+  showHeading = true, 
+  noPadding = false,
+  showViewAll = true,
+  className = ""
+}: { 
+  showHeading?: boolean;
+  noPadding?: boolean;
+  showViewAll?: boolean;
+  className?: string;
+}) {
   return (
-    <section className="py-20 md:py-28">
+    <section className={`${noPadding ? "" : "py-20 md:py-28"} ${className}`}>
       <div className="container-page">
         {showHeading && (
           <SectionHeading
@@ -76,24 +86,26 @@ export function SocialGallery({ showHeading = true }: { showHeading?: boolean })
           ))}
         </div>
 
-        <div className="mt-12 flex flex-wrap justify-center gap-4">
-          <a
-            href="https://www.instagram.com/homeofirst/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-ink/90"
-          >
-            <Instagram className="h-4 w-4" />
-            Follow @homeofirst
-          </a>
-          <Link
-            to="/gallery"
-            className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-muted"
-          >
-            View full gallery
-            <ArrowRight className="h-4 w-4" />
-          </Link>
-        </div>
+        {showViewAll && (
+          <div className="mt-12 flex flex-wrap justify-center gap-4">
+            <a
+              href="https://www.instagram.com/homeofirst/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-ink/90"
+            >
+              <Instagram className="h-4 w-4" />
+              Follow @homeofirst
+            </a>
+            <Link
+              to="/gallery"
+              className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-muted"
+            >
+              View full gallery
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );
