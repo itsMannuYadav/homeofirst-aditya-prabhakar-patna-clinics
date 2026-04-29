@@ -9,7 +9,7 @@ export default defineConfig({
   plugins: [
     tanstackRouter(),
     tanstackStart({
-      server: {
+      deployment: {
         preset: "vercel",
       },
     }),
