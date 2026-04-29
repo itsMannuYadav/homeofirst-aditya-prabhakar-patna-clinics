@@ -5,6 +5,7 @@ import drImg from "@/assets/dr-paramjeet.jpg";
 import leavesBg from "@/assets/leaves-bg.jpg";
 import { Stat } from "@/components/Stat";
 import { SectionHeading } from "@/components/SectionHeading";
+import { SocialGallery } from "@/components/SocialGallery";
 import { SITE } from "@/lib/site";
 
 export const Route = createFileRoute("/")({
@@ -260,6 +261,9 @@ function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* SOCIAL GALLERY */}
+      <SocialGallery />
 
       {/* CTA */}
       <section className="container-page pb-20">
