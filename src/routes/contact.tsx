@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, MessageCircle, Star, Quote } from "lucide-react";
 import { SectionHeading } from "@/components/SectionHeading";
 import { SITE } from "@/lib/site";
 
@@ -17,6 +17,45 @@ export const Route = createFileRoute("/contact")({
   }),
   component: ContactPage,
 });
+
+const STORIES = [
+  {
+    name: "Sunita Devi",
+    where: "Hajipur",
+    condition: "Chronic migraine",
+    text: "I had migraines for 12 years. Painkillers stopped working. After 8 months with Dr. Prabhakar, my episodes have almost vanished. I sleep peacefully again.",
+  },
+  {
+    name: "Ramesh Kumar",
+    where: "Vaishali",
+    condition: "Childhood asthma",
+    text: "My son's inhaler use has dropped dramatically. Dr. Paramjeet treats him like family — patient with every question we ask.",
+  },
+  {
+    name: "Priya Singh",
+    where: "Patna",
+    condition: "PCOS",
+    text: "I travel 30 km because I trust no one else. My cycle is regular, my skin is clearing, and I feel hopeful about my health.",
+  },
+  {
+    name: "Anil Sharma",
+    where: "Muzaffarpur",
+    condition: "Knee arthritis",
+    text: "I was told I'd need knee replacement. Two years on Homeofirst's treatment, and I'm walking 4 km every morning without pain.",
+  },
+  {
+    name: "Meera Devi",
+    where: "Hajipur",
+    condition: "Eczema",
+    text: "Years of cortisone creams gave me only short relief. Dr. Prabhakar's remedies addressed the root — my skin has been clear for 14 months.",
+  },
+  {
+    name: "Rahul Kumar",
+    where: "Vaishali",
+    condition: "Recurring tonsillitis",
+    text: "Surgery was suggested for my daughter. Six months of homeopathy and her tonsils have stopped flaring. We are so grateful.",
+  },
+];
 
 function ContactPage() {
   return (
@@ -111,6 +150,39 @@ function ContactPage() {
               Map shows Hajipur city centre. Exact pin will be added once shared.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* PATIENT STORIES */}
+      <section className="bg-primary-soft/30 py-20">
+        <div className="container-page">
+          <SectionHeading
+            eyebrow="Patient stories"
+            title="Real journeys. Real healing."
+            description="Read how families across Bihar have found lasting relief under our care."
+          />
+          <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {STORIES.map((s) => (
+              <article key={s.name} className="relative rounded-2xl border border-border bg-card p-7 shadow-soft">
+                <Quote className="absolute right-6 top-6 h-8 w-8 text-primary-soft" />
+                <div className="flex gap-0.5">
+                  {[0, 1, 2, 3, 4].map((i) => (
+                    <Star key={i} className="h-4 w-4 fill-gold text-gold" />
+                  ))}
+                </div>
+                <p className="mt-4 font-serif text-lg leading-snug text-foreground">"{s.text}"</p>
+                <div className="mt-6 border-t border-border pt-4">
+                  <div className="font-medium text-foreground">{s.name}</div>
+                  <div className="text-xs text-muted-foreground">
+                    {s.where} · Treated for {s.condition}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+          <p className="mt-12 text-center text-[10px] text-muted-foreground uppercase tracking-widest">
+            * Individual results may vary. Patient details shared with consent.
+          </p>
         </div>
       </section>
     </>

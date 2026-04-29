@@ -10,7 +10,6 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TreatmentsRouteImport } from './routes/treatments'
-import { Route as StoriesRouteImport } from './routes/stories'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as FaqsRouteImport } from './routes/faqs'
 import { Route as DoctorRouteImport } from './routes/doctor'
@@ -21,11 +20,6 @@ import { Route as IndexRouteImport } from './routes/index'
 const TreatmentsRoute = TreatmentsRouteImport.update({
   id: '/treatments',
   path: '/treatments',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const StoriesRoute = StoriesRouteImport.update({
-  id: '/stories',
-  path: '/stories',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GalleryRoute = GalleryRouteImport.update({
@@ -66,7 +60,6 @@ export interface FileRoutesByFullPath {
   '/doctor': typeof DoctorRoute
   '/faqs': typeof FaqsRoute
   '/gallery': typeof GalleryRoute
-  '/stories': typeof StoriesRoute
   '/treatments': typeof TreatmentsRoute
 }
 export interface FileRoutesByTo {
@@ -76,7 +69,6 @@ export interface FileRoutesByTo {
   '/doctor': typeof DoctorRoute
   '/faqs': typeof FaqsRoute
   '/gallery': typeof GalleryRoute
-  '/stories': typeof StoriesRoute
   '/treatments': typeof TreatmentsRoute
 }
 export interface FileRoutesById {
@@ -87,7 +79,6 @@ export interface FileRoutesById {
   '/doctor': typeof DoctorRoute
   '/faqs': typeof FaqsRoute
   '/gallery': typeof GalleryRoute
-  '/stories': typeof StoriesRoute
   '/treatments': typeof TreatmentsRoute
 }
 export interface FileRouteTypes {
@@ -99,7 +90,6 @@ export interface FileRouteTypes {
     | '/doctor'
     | '/faqs'
     | '/gallery'
-    | '/stories'
     | '/treatments'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -109,7 +99,6 @@ export interface FileRouteTypes {
     | '/doctor'
     | '/faqs'
     | '/gallery'
-    | '/stories'
     | '/treatments'
   id:
     | '__root__'
@@ -119,7 +108,6 @@ export interface FileRouteTypes {
     | '/doctor'
     | '/faqs'
     | '/gallery'
-    | '/stories'
     | '/treatments'
   fileRoutesById: FileRoutesById
 }
@@ -130,7 +118,6 @@ export interface RootRouteChildren {
   DoctorRoute: typeof DoctorRoute
   FaqsRoute: typeof FaqsRoute
   GalleryRoute: typeof GalleryRoute
-  StoriesRoute: typeof StoriesRoute
   TreatmentsRoute: typeof TreatmentsRoute
 }
 
@@ -141,13 +128,6 @@ declare module '@tanstack/react-router' {
       path: '/treatments'
       fullPath: '/treatments'
       preLoaderRoute: typeof TreatmentsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/stories': {
-      id: '/stories'
-      path: '/stories'
-      fullPath: '/stories'
-      preLoaderRoute: typeof StoriesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/gallery': {
@@ -202,7 +182,6 @@ const rootRouteChildren: RootRouteChildren = {
   DoctorRoute: DoctorRoute,
   FaqsRoute: FaqsRoute,
   GalleryRoute: GalleryRoute,
-  StoriesRoute: StoriesRoute,
   TreatmentsRoute: TreatmentsRoute,
 }
 export const routeTree = rootRouteImport
