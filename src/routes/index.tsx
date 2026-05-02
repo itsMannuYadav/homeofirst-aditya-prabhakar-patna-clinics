@@ -97,8 +97,8 @@ function HomePage() {
               <span className="text-primary italic">Lasting healing.</span>
             </h1>
             <p className="mt-5 max-w-xl text-lg text-muted-foreground">
-              At Homeofirst, Dr. Paramjeet Prabhakar treats the person — not just the disease. Recognized for
-              excellence with 26+ years of clinical practice.
+              Dr. Paramjeet Prabhakar (Prabhakar's Clinic, Hajipur) treats the person — not just the disease.
+              Experience gentle, lasting healing on the Homeofirst platform.
             </p>
 
             <div className="mt-7 flex flex-wrap items-center gap-3">
@@ -131,7 +131,7 @@ function HomePage() {
               </div>
               <div className="flex items-center gap-2">
                 <ShieldCheck className="h-4 w-4 text-accent" />
-                <span>Awarded Excellence</span>
+                <span>Prabhakar's Clinic, Hajipur</span>
               </div>
             </div>
           </div>
@@ -232,7 +232,7 @@ function HomePage() {
             <SectionHeading
               eyebrow="Meet your doctor"
               title="Dr. Paramjeet Prabhakar"
-              description="A homeopathy specialist serving Hajipur and the wider Vaishali district. Known for his attentive consultations, careful case-taking, and remedies that honour each patient's individual constitution."
+              description="The Chief Specialist at Prabhakar's Clinic, Hajipur. Known for his attentive consultations, careful case-taking, and remedies that honour each patient's individual constitution."
               align="left"
             />
             <ul className="mt-7 space-y-3 text-sm text-foreground">

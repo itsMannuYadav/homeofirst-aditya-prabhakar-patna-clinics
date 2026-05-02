@@ -1,13 +1,15 @@
 export const SITE = {
   name: "Homeofirst",
-  tagline: "Gentle homeopathy. Lasting healing.",
+  tagline: "The Future of Homeopathic Care.",
+  platform: "Homeofirst",
   doctor: "Dr. Paramjeet Prabhakar",
+  mainClinic: "Prabhakar's Clinic",
   city: "Hajipur, Bihar",
   phone: "+91 95727 04600",
   phoneHref: "tel:+919572704600",
   whatsapp: "919572704600",
   whatsappHref:
-    "https://wa.me/919572704600?text=Hello%20Dr.%20Paramjeet%2C%20I%27d%20like%20to%20book%20an%20appointment%20at%20Homeofirst.",
+    "https://wa.me/919572704600?text=Hello%20Dr.%20Paramjeet%2C%20I%27d%20like%20to%20book%20an%20appointment%20at%20Prabhakar%27s%20Clinic.",
   email: "homeofirstt@gmail.com",
   instagram: "https://www.instagram.com/homeofirst._?igsh=NDQ0YnYxb2RrN2xv",
   address: "Near Gandhi Chowk, Station Road, Hajipur, Bihar 844101",
@@ -17,4 +19,22 @@ export const SITE = {
     patients: "2 Lakh+",
     rating: "5.0",
   },
+  clinics: [
+    {
+      id: "hajipur",
+      name: "Prabhakar's Clinic",
+      location: "Hajipur, Bihar",
+      address: "Near Gandhi Chowk, Station Road, Hajipur, Bihar 844101",
+      isFlagship: true,
+      status: "active",
+    },
+    {
+      id: "patna",
+      name: "Homeofirst (Coming Soon)",
+      location: "Patna, Bihar",
+      address: "Expansion in progress",
+      isFlagship: false,
+      status: "upcoming",
+    },
+  ],
 };

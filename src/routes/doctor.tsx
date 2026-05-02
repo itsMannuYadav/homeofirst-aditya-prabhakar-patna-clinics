@@ -11,7 +11,7 @@ export const Route = createFileRoute("/doctor")({
       {
         name: "description",
         content:
-          "Meet Dr. Paramjeet Prabhakar — homeopathy specialist with 26+ years of practice in Hajipur, Bihar. 2 lakh+ patients treated.",
+          "Meet Dr. Paramjeet Prabhakar — homeopathy specialist at Prabhakar's Clinic, Hajipur. 26+ years of practice, 2 lakh+ patients treated.",
       },
       { property: "og:title", content: "Dr. Paramjeet Prabhakar — Homeopath, Hajipur" },
       { property: "og:image", content: drImg },
@@ -46,7 +46,7 @@ function DoctorPage() {
           </div>
           <div>
             <div className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-              Homeopathy Specialist · Hajipur, Bihar
+              Prabhakar's Clinic · Hajipur, Bihar
             </div>
             <h1 className="mt-3 font-serif text-4xl text-foreground md:text-5xl lg:text-6xl">
               Dr. Paramjeet Prabhakar
@@ -54,8 +54,8 @@ function DoctorPage() {
             <span className="leaf-divider mt-5" />
             <p className="mt-6 text-lg text-muted-foreground">
               For more than two decades, Dr. Paramjeet has been the quiet backbone of homeopathic
-              care in Hajipur. His practice is defined by long, careful consultations, classical
-              prescribing, and a deep respect for each patient's story.
+              care at Prabhakar's Clinic, Hajipur. His practice is defined by long, careful
+              consultations, classical prescribing, and a deep respect for each patient's story.
             </p>
 
             <div className="mt-8 grid gap-4 sm:grid-cols-3">

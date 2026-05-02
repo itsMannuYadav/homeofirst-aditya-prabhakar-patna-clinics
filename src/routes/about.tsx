@@ -38,9 +38,9 @@ function AboutPage() {
         />
         <div className="container-page relative">
           <SectionHeading
-            eyebrow="About us"
-            title="A clinic built on listening"
-            description="Homeofirst was founded with a simple belief — that healing begins when a doctor truly hears you. For over two decades, we've cared for families across Hajipur and Bihar with quiet, attentive medicine."
+            eyebrow="The Platform"
+            title="Expanding the reach of healing"
+            description="Homeofirst is more than a clinic; it is a platform dedicated to bringing elite homeopathic care to families everywhere, starting with our flagship legacy, Prabhakar's Clinic."
           />
         </div>
       </section>
@@ -57,10 +57,9 @@ function AboutPage() {
                 in observation, individualisation, and respect for the body's wisdom.
               </p>
               <p>
-                Over 26+ years and more than 2 lakh consultations, the clinic has become a quiet
-                landmark in Hajipur — a place where patients are remembered by name, where children
-                grow up under one doctor's watch, and where chronic conditions are treated with
-                patience rather than haste.
+                Over 26+ years and more than 2 lakh consultations, Prabhakar's Clinic has become a
+                quiet landmark in Hajipur — the flagship location for the Homeofirst vision of
+                individualised, gentle care.
               </p>
               <p>
                 We don't believe in quick fixes. We believe in remedies chosen carefully, follow-ups
