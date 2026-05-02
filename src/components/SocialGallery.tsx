@@ -10,25 +10,25 @@ const REELS = [
     id: "1",
     thumbnail: drImg,
     title: "Understanding Homeopathy",
-    link: "https://www.instagram.com/reel/DXmJ8r4gYd9/",
+    link: "https://www.instagram.com/homeofirst._?igsh=NDQ0YnYxb2RrN2xv",
   },
   {
     id: "2",
     thumbnail: heroImg,
     title: "Gentle Healing Process",
-    link: "https://www.instagram.com/reel/DXmJ8r4gYd9/",
+    link: "https://www.instagram.com/homeofirst._?igsh=NDQ0YnYxb2RrN2xv",
   },
   {
     id: "3",
     thumbnail: drImg,
     title: "Patient Success Stories",
-    link: "https://www.instagram.com/reel/DXmJ8r4gYd9/",
+    link: "https://www.instagram.com/homeofirst._?igsh=NDQ0YnYxb2RrN2xv",
   },
   {
     id: "4",
     thumbnail: heroImg,
     title: "Clinic Highlights",
-    link: "https://www.instagram.com/reel/DXmJ8r4gYd9/",
+    link: "https://www.instagram.com/homeofirst._?igsh=NDQ0YnYxb2RrN2xv",
   },
 ];
 
