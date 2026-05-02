@@ -5,8 +5,8 @@ export const SITE = {
   doctor: "Dr. Paramjeet Prabhakar",
   mainClinic: "Prabhakar's Clinic",
   city: "Hajipur, Bihar",
-  phone: "+91 63885 12839",
-  phoneHref: "tel:+916388512839",
+  phone: "+91 95727 04600",
+  phoneHref: "tel:+919572704600",
   whatsapp: "919572704600",
   whatsappHref:
     "https://wa.me/919572704600?text=Hello%20Dr.%20Paramjeet%2C%20I%27d%20like%20to%20book%20an%20appointment%20at%20Prabhakar%27s%20Clinic.",
