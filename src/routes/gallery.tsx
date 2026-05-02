@@ -74,13 +74,13 @@ function GalleryPage() {
             Follow us on Instagram for daily updates and health tips.
           </p>
           <a
-            href="https://www.instagram.com/homeofirst/"
+            href={SITE.instagram}
             target="_blank"
             rel="noopener noreferrer"
             className="mt-6 inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-sm font-medium text-primary-foreground shadow-soft transition-transform hover:scale-[1.02]"
           >
             <Instagram className="h-5 w-5" />
-            Connect with @homeofirst
+            Connect with @homeofirst._
           </a>
         </div>
       </section>

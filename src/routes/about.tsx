@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Leaf, Heart, Award, Users } from "lucide-react";
 import { SectionHeading } from "@/components/SectionHeading";
 import leavesBg from "@/assets/leaves-bg.jpg";
+import kapilVideo from "@/assets/Receiving Award from Kapil Dev Video.mp4";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -66,6 +67,34 @@ function AboutPage() {
               </p>
             </div>
           </div>
+
+          <div className="relative">
+            <div className="relative overflow-hidden rounded-[2rem] bg-ink shadow-glow">
+              <video
+                src={kapilVideo}
+                className="h-full w-full object-cover"
+                controls
+                muted
+                loop
+                autoPlay
+                playsInline
+              />
+              <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-ink/40 to-transparent" />
+            </div>
+            <div className="absolute -bottom-6 -right-6 rounded-2xl bg-background p-5 shadow-soft ring-1 ring-border">
+              <div className="flex items-center gap-3">
+                <Award className="h-5 w-5 text-accent" />
+                <div>
+                  <div className="font-serif text-lg leading-none">Distinction</div>
+                  <div className="text-xs text-muted-foreground">Received from Kapil Dev</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="bg-card py-20">
+        <div className="container-page grid gap-12 lg:grid-cols-2">
           <div>
             <h3 className="font-serif text-3xl text-foreground">Our philosophy</h3>
             <span className="leaf-divider mt-3" />
@@ -82,6 +111,15 @@ function AboutPage() {
               </p>
               <p>
                 That's how we work. Slowly, carefully, and always with the whole person in mind.
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center justify-center rounded-[2rem] bg-primary-soft/30 p-8">
+            <div className="max-w-xs text-center">
+              <Heart className="mx-auto h-12 w-12 text-primary" />
+              <h4 className="mt-6 font-serif text-2xl">Holistic Healing</h4>
+              <p className="mt-3 text-sm text-muted-foreground">
+                We believe in treating the person, not just the disease. Our approach is gentle, deep, and individualised.
               </p>
             </div>
           </div>

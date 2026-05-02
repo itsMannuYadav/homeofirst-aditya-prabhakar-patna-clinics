@@ -89,13 +89,13 @@ export function SocialGallery({
         {showViewAll && (
           <div className="mt-12 flex flex-wrap justify-center gap-4">
             <a
-              href="https://www.instagram.com/homeofirst/"
+              href={SITE.instagram}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-ink/90"
             >
               <Instagram className="h-4 w-4" />
-              Follow @homeofirst
+              Follow @homeofirst._
             </a>
             <Link
               to="/gallery"

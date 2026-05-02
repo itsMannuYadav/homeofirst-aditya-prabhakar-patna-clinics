@@ -237,7 +237,7 @@ function HomePage() {
             />
             <ul className="mt-7 space-y-3 text-sm text-foreground">
               {[
-                "BHMS · Bachelor of Homeopathic Medicine & Surgery",
+                "Homeopathy Specialist",
                 "26+ years of clinical practice",
                 "2 lakh+ patients treated across Bihar",
                 "Specialises in chronic and lifestyle conditions",

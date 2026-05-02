@@ -11,7 +11,7 @@ export const Route = createFileRoute("/doctor")({
       {
         name: "description",
         content:
-          "Meet Dr. Paramjeet Prabhakar, BHMS — homeopathy specialist with 26+ years of practice in Hajipur, Bihar. 2 lakh+ patients treated.",
+          "Meet Dr. Paramjeet Prabhakar — homeopathy specialist with 26+ years of practice in Hajipur, Bihar. 2 lakh+ patients treated.",
       },
       { property: "og:title", content: "Dr. Paramjeet Prabhakar — Homeopath, Hajipur" },
       { property: "og:image", content: drImg },
@@ -21,7 +21,7 @@ export const Route = createFileRoute("/doctor")({
 });
 
 const TIMELINE = [
-  { year: "1998", text: "Completed BHMS and began private practice in Hajipur." },
+  { year: "1998", text: "Began private practice in Hajipur as a Homeopathy Specialist." },
   { year: "2005", text: "Crossed 25,000 consultations; specialised focus on chronic disease." },
   { year: "2012", text: "Established the present clinic at Station Road, Hajipur." },
   { year: "2018", text: "Reached 1 lakh patients treated across Bihar." },
@@ -61,7 +61,7 @@ function DoctorPage() {
             <div className="mt-8 grid gap-4 sm:grid-cols-3">
               <div className="rounded-2xl border border-border bg-card p-4">
                 <GraduationCap className="h-5 w-5 text-accent" />
-                <div className="mt-2 font-serif text-2xl">BHMS</div>
+                <div className="mt-2 font-serif text-2xl leading-tight">Homeopathy Specialist</div>
                 <div className="text-xs text-muted-foreground">Qualified Practitioner</div>
               </div>
               <div className="rounded-2xl border border-border bg-card p-4">
