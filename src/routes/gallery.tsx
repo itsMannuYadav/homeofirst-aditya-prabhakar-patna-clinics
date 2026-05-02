@@ -4,9 +4,12 @@ import { SocialGallery } from "@/components/SocialGallery";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Instagram, Camera, Video, X, Maximize2 } from "lucide-react";
 import drImg from "@/assets/dr-paramjeet.jpg";
-import heroImg from "@/assets/Hero Section Slide Show Image 1.jpg";
+import slide1 from "@/assets/Hero Section Slide Show Image 1.jpg";
+import slide2 from "@/assets/Hero Section Slide Show Image 2.jpg";
 import slide3 from "@/assets/Hero Section Slide Show Image  3.jpg";
+import slide4 from "@/assets/Hero Section Slide Show Image 4.jpg";
 import slide5 from "@/assets/Hero Section Slide Show Image 5.jpg";
+import slide6 from "@/assets/Hero Section Slide Show Image 6.jpg";
 import { SITE } from "@/lib/site";
 
 export const Route = createFileRoute("/gallery")({
@@ -24,9 +27,12 @@ export const Route = createFileRoute("/gallery")({
 
 const PHOTOS = [
   { id: "p1", img: drImg, alt: "Dr. Paramjeet at the clinic" },
-  { id: "p2", img: heroImg, alt: "Homeopathic medicine focus" },
-  { id: "p3", img: slide3, alt: "Clinic award showcase" },
-  { id: "p4", img: slide5, alt: "Consultation room" },
+  { id: "p2", img: slide1, alt: "Prestigious homeopathy award ceremony" },
+  { id: "p3", img: slide2, alt: "Excellence in Homeopathy award" },
+  { id: "p4", img: slide3, alt: "Recognition for 26+ years of service" },
+  { id: "p5", img: slide4, alt: "Awarded by renowned medical professionals" },
+  { id: "p6", img: slide5, alt: "Honored for contribution to natural healing" },
+  { id: "p7", img: slide6, alt: "Homeofirst clinic achievement award" },
 ];
 
 function GalleryPage() {
