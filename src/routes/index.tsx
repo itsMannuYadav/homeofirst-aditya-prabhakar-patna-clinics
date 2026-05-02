@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Star, ShieldCheck, Sparkles, Leaf, ArrowRight, Phone, MessageCircle } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Star, ShieldCheck, Sparkles, Leaf, ArrowRight, Phone, MessageCircle, Maximize2, X } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import slide1 from "@/assets/Hero Section Slide Show Image 1.jpg";
@@ -78,6 +79,18 @@ function HomePage() {
     Autoplay({ delay: 5000, stopOnInteraction: false }),
   ]);
 
+  const [selectedImg, setSelectedImg] = useState<string | null>(null);
+
+  // Prevent scrolling when lightbox is open
+  useEffect(() => {
+    if (selectedImg) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => { document.body.style.overflow = "unset"; };
+  }, [selectedImg]);
+
   return (
     <>
       {/* HERO */}
@@ -141,13 +154,21 @@ function HomePage() {
               <div className="embla__container flex">
                 {HERO_SLIDES.map((slide, index) => (
                   <div key={index} className="embla__slide min-w-0 flex-[0_0_100%]">
-                    <img
-                      src={slide.img}
-                      alt={slide.alt}
-                      width={1600}
-                      height={1200}
-                      className="aspect-[4/3] w-full object-cover"
-                    />
+                    <button 
+                       onClick={() => setSelectedImg(slide.img)}
+                       className="group relative block w-full h-full cursor-zoom-in"
+                    >
+                      <img
+                        src={slide.img}
+                        alt={slide.alt}
+                        width={1600}
+                        height={1200}
+                        className="aspect-[4/3] w-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-ink/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <Maximize2 className="text-white h-10 w-10 scale-75 group-hover:scale-100 transition-transform duration-300" />
+                      </div>
+                    </button>
                   </div>
                 ))}
               </div>
@@ -323,6 +344,32 @@ function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* LIGHTBOX MODAL */}
+      {selectedImg && (
+        <div 
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-ink/95 p-4 md:p-10 transition-all animate-in fade-in duration-300"
+          onClick={() => setSelectedImg(null)}
+        >
+          <button 
+            className="absolute right-6 top-6 z-[110] rounded-full bg-white/10 p-2 text-white hover:bg-white/20 transition-colors"
+            onClick={(e) => { e.stopPropagation(); setSelectedImg(null); }}
+          >
+            <X className="h-6 w-6" />
+          </button>
+          
+          <div 
+            className="relative max-h-full max-w-full overflow-hidden rounded-xl shadow-2xl animate-in zoom-in-95 duration-300"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img 
+              src={selectedImg} 
+              alt="Hero Preview" 
+              className="max-h-[90vh] w-auto object-contain"
+            />
+          </div>
+        </div>
+      )}
     </>
   );
 }
