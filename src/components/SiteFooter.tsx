@@ -53,7 +53,6 @@ export function SiteFooter() {
             <li><Link to="/doctor">The Doctor</Link></li>
             <li><Link to="/treatments">Treatments</Link></li>
             <li><Link to="/gallery">Gallery</Link></li>
-            <li><Link to="/faqs">FAQs</Link></li>
             <li><Link to="/contact">Contact</Link></li>
           </ul>
         </div>
