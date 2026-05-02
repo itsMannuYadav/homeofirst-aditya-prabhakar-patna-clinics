@@ -221,7 +221,10 @@ function ContactPage() {
           <p className="mt-12 text-center text-[10px] text-muted-foreground uppercase tracking-widest">
             * Individual results may vary. Patient details shared with consent.
           </p>
-          {/* FAQ SECTION */}
+        </div>
+      </section>
+
+      {/* FAQ SECTION */}
       <section className="py-20 border-t border-border">
         <div className="container-page max-w-4xl">
           <SectionHeading

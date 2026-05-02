@@ -11,7 +11,6 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TreatmentsRouteImport } from './routes/treatments'
 import { Route as GalleryRouteImport } from './routes/gallery'
-import { Route as FaqsRouteImport } from './routes/faqs'
 import { Route as DoctorRouteImport } from './routes/doctor'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ClinicsRouteImport } from './routes/clinics'
@@ -26,11 +25,6 @@ const TreatmentsRoute = TreatmentsRouteImport.update({
 const GalleryRoute = GalleryRouteImport.update({
   id: '/gallery',
   path: '/gallery',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FaqsRoute = FaqsRouteImport.update({
-  id: '/faqs',
-  path: '/faqs',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DoctorRoute = DoctorRouteImport.update({
@@ -65,7 +59,6 @@ export interface FileRoutesByFullPath {
   '/clinics': typeof ClinicsRoute
   '/contact': typeof ContactRoute
   '/doctor': typeof DoctorRoute
-  '/faqs': typeof FaqsRoute
   '/gallery': typeof GalleryRoute
   '/treatments': typeof TreatmentsRoute
 }
@@ -75,7 +68,6 @@ export interface FileRoutesByTo {
   '/clinics': typeof ClinicsRoute
   '/contact': typeof ContactRoute
   '/doctor': typeof DoctorRoute
-  '/faqs': typeof FaqsRoute
   '/gallery': typeof GalleryRoute
   '/treatments': typeof TreatmentsRoute
 }
@@ -86,7 +78,6 @@ export interface FileRoutesById {
   '/clinics': typeof ClinicsRoute
   '/contact': typeof ContactRoute
   '/doctor': typeof DoctorRoute
-  '/faqs': typeof FaqsRoute
   '/gallery': typeof GalleryRoute
   '/treatments': typeof TreatmentsRoute
 }
@@ -98,7 +89,6 @@ export interface FileRouteTypes {
     | '/clinics'
     | '/contact'
     | '/doctor'
-    | '/faqs'
     | '/gallery'
     | '/treatments'
   fileRoutesByTo: FileRoutesByTo
@@ -108,7 +98,6 @@ export interface FileRouteTypes {
     | '/clinics'
     | '/contact'
     | '/doctor'
-    | '/faqs'
     | '/gallery'
     | '/treatments'
   id:
@@ -118,7 +107,6 @@ export interface FileRouteTypes {
     | '/clinics'
     | '/contact'
     | '/doctor'
-    | '/faqs'
     | '/gallery'
     | '/treatments'
   fileRoutesById: FileRoutesById
@@ -129,7 +117,6 @@ export interface RootRouteChildren {
   ClinicsRoute: typeof ClinicsRoute
   ContactRoute: typeof ContactRoute
   DoctorRoute: typeof DoctorRoute
-  FaqsRoute: typeof FaqsRoute
   GalleryRoute: typeof GalleryRoute
   TreatmentsRoute: typeof TreatmentsRoute
 }
@@ -148,13 +135,6 @@ declare module '@tanstack/react-router' {
       path: '/gallery'
       fullPath: '/gallery'
       preLoaderRoute: typeof GalleryRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/faqs': {
-      id: '/faqs'
-      path: '/faqs'
-      fullPath: '/faqs'
-      preLoaderRoute: typeof FaqsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/doctor': {
@@ -201,7 +181,6 @@ const rootRouteChildren: RootRouteChildren = {
   ClinicsRoute: ClinicsRoute,
   ContactRoute: ContactRoute,
   DoctorRoute: DoctorRoute,
-  FaqsRoute: FaqsRoute,
   GalleryRoute: GalleryRoute,
   TreatmentsRoute: TreatmentsRoute,
 }

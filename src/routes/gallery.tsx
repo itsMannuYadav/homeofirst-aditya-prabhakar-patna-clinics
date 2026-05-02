@@ -1,9 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 import { SocialGallery } from "@/components/SocialGallery";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Instagram, Camera, Video } from "lucide-react";
 import drImg from "@/assets/dr-paramjeet.jpg";
 import heroImg from "@/assets/Hero Section Slide Show Image 1.jpg";
+import slide3 from "@/assets/Hero Section Slide Show Image  3.jpg";
+import slide5 from "@/assets/Hero Section Slide Show Image 5.jpg";
 import { SITE } from "@/lib/site";
 
 export const Route = createFileRoute("/gallery")({
@@ -19,7 +22,16 @@ export const Route = createFileRoute("/gallery")({
   component: GalleryPage,
 });
 
+const PHOTOS = [
+  { id: "p1", img: drImg, alt: "Dr. Paramjeet at the clinic" },
+  { id: "p2", img: heroImg, alt: "Homeopathic medicine focus" },
+  { id: "p3", img: slide3, alt: "Clinic award showcase" },
+  { id: "p4", img: slide5, alt: "Consultation room" },
+];
+
 function GalleryPage() {
+  const [filter, setFilter] = useState<"all" | "videos" | "photos">("all");
+
   return (
     <>
       <section className="bg-gradient-hero pt-16 pb-12 md:pt-24 md:pb-16">
@@ -35,37 +47,43 @@ function GalleryPage() {
       <section className="py-16 md:py-24">
         <div className="container-page">
           <div className="mb-12 flex flex-wrap items-center justify-center gap-6 border-b border-border pb-8 md:gap-12">
-            <button className="flex items-center gap-2 text-primary transition-colors hover:text-primary/80">
+            <button 
+              onClick={() => setFilter("videos")}
+              className={`flex items-center gap-2 transition-all duration-300 ${filter === "videos" ? "text-primary border-b-2 border-primary pb-2 scale-105" : "text-muted-foreground hover:text-foreground"}`}
+            >
               <Video className="h-5 w-5" />
               <span className="text-sm font-medium">Videos & Reels</span>
             </button>
-            <button className="flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground">
+            <button 
+              onClick={() => setFilter("photos")}
+              className={`flex items-center gap-2 transition-all duration-300 ${filter === "photos" ? "text-primary border-b-2 border-primary pb-2 scale-105" : "text-muted-foreground hover:text-foreground"}`}
+            >
               <Camera className="h-5 w-5" />
               <span className="text-sm font-medium">Photos</span>
             </button>
-            <button className="flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground">
+            <button 
+              onClick={() => setFilter("all")}
+              className={`flex items-center gap-2 transition-all duration-300 ${filter === "all" ? "text-primary border-b-2 border-primary pb-2 scale-105" : "text-muted-foreground hover:text-foreground"}`}
+            >
               <Instagram className="h-5 w-5" />
               <span className="text-sm font-medium">Social Wall</span>
             </button>
           </div>
 
-          <SocialGallery showHeading={false} noPadding showViewAll={false} className="mb-20" />
+          {(filter === "all" || filter === "videos") && (
+            <SocialGallery showHeading={false} noPadding showViewAll={false} className="mb-12" />
+          )}
           
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-             {/* Static Photo Gallery Section */}
-             <div className="group relative overflow-hidden rounded-2xl bg-muted aspect-square">
-                <img src={drImg} alt="Clinic" className="h-full w-full object-cover transition-transform group-hover:scale-105" />
-                <div className="absolute inset-0 bg-ink/20 opacity-0 transition-opacity group-hover:opacity-100" />
-             </div>
-             <div className="group relative overflow-hidden rounded-2xl bg-muted aspect-square">
-                <img src={heroImg} alt="Medicine" className="h-full w-full object-cover transition-transform group-hover:scale-105" />
-                <div className="absolute inset-0 bg-ink/20 opacity-0 transition-opacity group-hover:opacity-100" />
-             </div>
-             <div className="group relative overflow-hidden rounded-2xl bg-muted aspect-square">
-                <img src={drImg} alt="Consultation" className="h-full w-full object-cover transition-transform group-hover:scale-105" />
-                <div className="absolute inset-0 bg-ink/20 opacity-0 transition-opacity group-hover:opacity-100" />
-             </div>
-          </div>
+          {(filter === "all" || filter === "photos") && (
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+               {PHOTOS.map((photo) => (
+                 <div key={photo.id} className="group relative overflow-hidden rounded-2xl bg-muted aspect-square shadow-soft ring-1 ring-border">
+                    <img src={photo.img} alt={photo.alt} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                    <div className="absolute inset-0 bg-ink/20 opacity-0 transition-opacity group-hover:opacity-100" />
+                 </div>
+               ))}
+            </div>
+          )}
         </div>
       </section>
 
