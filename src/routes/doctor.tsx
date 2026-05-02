@@ -1,7 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { GraduationCap, Award, Users, Calendar, Phone, MessageCircle } from "lucide-react";
-import drImg from "@/assets/dr-paramjeet.jpg";
+import drImg from "@/assets/dr Paramjeet Prabhakar.jpeg";
 import { SectionHeading } from "@/components/SectionHeading";
+import kapilVideo from "@/assets/kapil dev award.mp4"
+import newsAvardVideo from "@/assets/zee news interview.mp4"
 import { SITE } from "@/lib/site";
 
 export const Route = createFileRoute("/doctor")({
@@ -136,6 +138,42 @@ function DoctorPage() {
                 </li>
               ))}
             </ul>
+          </div>
+        </div>
+      </section>
+      <section className="py-20">
+        <div className="container-page grid gap-12 lg:grid-cols-2">
+          
+          <div className="relative">
+            <div className="relative overflow-hidden rounded-[2rem] bg-ink shadow-glow">
+              <video
+                src={kapilVideo}
+                className="h-full w-full object-cover"
+                controls
+                muted
+                loop
+                autoPlay
+                playsInline
+              />
+              <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-ink/40 to-transparent" />
+            </div>
+            
+          </div>
+
+          <div className="relative">
+            <div className="relative overflow-hidden rounded-[2rem] bg-ink shadow-glow">
+              <video
+                src={newsAvardVideo}
+                className="h-full w-full object-cover"
+                controls
+                muted
+                loop
+                autoPlay
+                playsInline
+              />
+              <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-ink/40 to-transparent" />
+            </div>
+            
           </div>
         </div>
       </section>

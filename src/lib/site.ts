@@ -17,7 +17,7 @@ export const SITE = {
   stats: {
     years: "26+",
     patients: "2 Lakh+",
-    rating: "5.0",
+    rating: "4.7",
   },
   clinics: [
     {

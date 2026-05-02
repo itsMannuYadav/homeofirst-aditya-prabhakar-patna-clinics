@@ -1,16 +1,16 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState, useEffect } from "react";
-import { Star, ShieldCheck, Sparkles, Leaf, ArrowRight, Phone, MessageCircle, Maximize2, X } from "lucide-react";
+import { Star, StarHalf,ShieldCheck, Sparkles, Leaf, ArrowRight, Phone, MessageCircle, Maximize2, X } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-import slide1 from "@/assets/Hero Section Slide Show Image 1.jpg";
-import slide2 from "@/assets/Hero Section Slide Show Image 2.jpg";
-import slide3 from "@/assets/Hero Section Slide Show Image  3.jpg";
-import slide4 from "@/assets/Hero Section Slide Show Image 4.jpg";
-import slide5 from "@/assets/Hero Section Slide Show Image 5.jpg";
-import slide6 from "@/assets/Hero Section Slide Show Image 6.jpg";
+import slide1 from "@/assets/Hero Section Slide Show Image 1.jpeg";
+import slide2 from "@/assets/Hero Section Slide Show Image 2.jpeg";
+import slide3 from "@/assets/Hero Section Slide Show Image 3.jpeg";
+import slide4 from "@/assets/Hero Section Slide Show Image 4.jpeg";
+import slide5 from "@/assets/Hero Section Slide Show Image 5.jpeg";
+import slide6 from "@/assets/Hero Section Slide Show Image 6.jpeg";
 
-import drImg from "@/assets/dr-paramjeet.jpg";
+import drImg from "@/assets/dr Paramjeet Prabhakar.jpeg";
 import leavesBg from "@/assets/leaves-bg.jpg";
 import { Stat } from "@/components/Stat";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -110,7 +110,7 @@ function HomePage() {
               <span className="text-primary italic">Lasting healing.</span>
             </h1>
             <p className="mt-5 max-w-xl text-lg text-muted-foreground">
-              Dr. Paramjeet Prabhakar (Prabhakar's Clinic, Hajipur) treats the person — not just the disease.
+              Dr. Paramjeet Prabhakar (Prabhakar's Clinic, Hajipur) treats the person not just the disease.
               Experience gentle, lasting healing on the Homeofirst platform.
             </p>
 
@@ -137,10 +137,10 @@ function HomePage() {
               <div className="flex items-center gap-2">
                 <div className="flex">
                   {[0, 1, 2, 3, 4].map((i) => (
-                    <Star key={i} className="h-4 w-4 fill-gold text-gold" />
+                    i === 4 ? <StarHalf key={i} className="h-4 w-4 fill-gold text-gold" />:<Star key={i} className="h-4 w-4 fill-gold text-gold" />
                   ))}
                 </div>
-                <span><strong className="text-foreground">5.0</strong> patient rating</span>
+                <span><strong className="text-foreground">4.7</strong> patient rating</span>
               </div>
               <div className="flex items-center gap-2">
                 <ShieldCheck className="h-4 w-4 text-accent" />
@@ -150,7 +150,7 @@ function HomePage() {
           </div>
 
           <div className="relative">
-            <div className="embla overflow-hidden rounded-[2rem] shadow-glow" ref={emblaRef}>
+            <div className="embla overflow-hidden rounded-4xl shadow-glow" ref={emblaRef}>
               <div className="embla__container flex">
                 {HERO_SLIDES.map((slide, index) => (
                   <div key={index} className="embla__slide min-w-0 flex-[0_0_100%]">
@@ -163,7 +163,7 @@ function HomePage() {
                         alt={slide.alt}
                         width={1600}
                         height={1200}
-                        className="aspect-[4/3] w-full object-cover"
+                        className="aspect-4/3 w-full object-fit"
                       />
                       <div className="absolute inset-0 bg-ink/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                         <Maximize2 className="text-white h-10 w-10 scale-75 group-hover:scale-100 transition-transform duration-300" />
