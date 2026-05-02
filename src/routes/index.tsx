@@ -76,7 +76,7 @@ const TESTIMONIALS = [
 
 function HomePage() {
   const [emblaRef] = useEmblaCarousel({ loop: true, duration: 30 }, [
-    Autoplay({ delay: 5000, stopOnInteraction: false }),
+    Autoplay({ delay: 3000, stopOnInteraction: false }),
   ]);
 
   const [selectedImg, setSelectedImg] = useState<string | null>(null);
