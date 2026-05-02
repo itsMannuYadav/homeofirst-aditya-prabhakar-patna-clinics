@@ -111,6 +111,7 @@ function ClinicsPage() {
             title="Expansion across Bihar"
             description="Our mission is to bring Dr. Paramjeet Prabhakar's standard of gentle, individualised care to every major city. We are currently scouting locations in Patna and Muzaffarpur."
             align="center"
+            light
           />
           <div className="mt-10 flex justify-center">
              <Link to="/contact" className="inline-flex items-center gap-2 text-primary-soft hover:gap-3 transition-all font-medium">
