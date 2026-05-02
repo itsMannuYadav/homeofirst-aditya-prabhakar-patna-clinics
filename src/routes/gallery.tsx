@@ -4,6 +4,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { Instagram, Camera, Video } from "lucide-react";
 import drImg from "@/assets/dr-paramjeet.jpg";
 import heroImg from "@/assets/Hero Section Slide Show Image 1.jpg";
+import { SITE } from "@/lib/site";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({

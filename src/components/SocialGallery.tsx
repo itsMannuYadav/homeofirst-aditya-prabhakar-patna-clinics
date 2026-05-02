@@ -3,6 +3,7 @@ import drImg from "@/assets/dr-paramjeet.jpg";
 import heroImg from "@/assets/Hero Section Slide Show Image 1.jpg";
 import { SectionHeading } from "./SectionHeading";
 import { Link } from "@tanstack/react-router";
+import { SITE } from "@/lib/site";
 
 const REELS = [
   {

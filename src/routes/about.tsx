@@ -3,6 +3,7 @@ import { Leaf, Heart, Award, Users } from "lucide-react";
 import { SectionHeading } from "@/components/SectionHeading";
 import leavesBg from "@/assets/leaves-bg.jpg";
 import kapilVideo from "@/assets/Receiving Award from Kapil Dev Video.mp4";
+import { SITE } from "@/lib/site";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
