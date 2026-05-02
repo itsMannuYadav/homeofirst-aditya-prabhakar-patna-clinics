@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { SocialGallery } from "@/components/SocialGallery";
 import { SectionHeading } from "@/components/SectionHeading";
-import { Instagram, Camera, Video } from "lucide-react";
+import { Instagram, Camera, Video, X, Maximize2 } from "lucide-react";
 import drImg from "@/assets/dr-paramjeet.jpg";
 import heroImg from "@/assets/Hero Section Slide Show Image 1.jpg";
 import slide3 from "@/assets/Hero Section Slide Show Image  3.jpg";
@@ -31,6 +31,17 @@ const PHOTOS = [
 
 function GalleryPage() {
   const [filter, setFilter] = useState<"all" | "videos" | "photos">("all");
+  const [selectedImg, setSelectedImg] = useState<string | null>(null);
+
+  // Prevent scrolling when lightbox is open
+  useEffect(() => {
+    if (selectedImg) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => { document.body.style.overflow = "unset"; };
+  }, [selectedImg]);
 
   return (
     <>
@@ -77,10 +88,16 @@ function GalleryPage() {
           {(filter === "all" || filter === "photos") && (
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
                {PHOTOS.map((photo) => (
-                 <div key={photo.id} className="group relative overflow-hidden rounded-2xl bg-muted aspect-square shadow-soft ring-1 ring-border">
+                 <button 
+                    key={photo.id} 
+                    onClick={() => setSelectedImg(photo.img)}
+                    className="group relative overflow-hidden rounded-2xl bg-muted aspect-square shadow-soft ring-1 ring-border"
+                 >
                     <img src={photo.img} alt={photo.alt} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                    <div className="absolute inset-0 bg-ink/20 opacity-0 transition-opacity group-hover:opacity-100" />
-                 </div>
+                    <div className="absolute inset-0 bg-ink/40 opacity-0 transition-opacity group-hover:opacity-100 flex items-center justify-center">
+                       <Maximize2 className="text-white h-8 w-8 scale-75 group-hover:scale-100 transition-transform duration-300" />
+                    </div>
+                 </button>
                ))}
             </div>
           )}
@@ -103,6 +120,32 @@ function GalleryPage() {
           </a>
         </div>
       </section>
+
+      {/* LIGHTBOX MODAL */}
+      {selectedImg && (
+        <div 
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-ink/95 p-4 md:p-10 transition-all animate-in fade-in duration-300"
+          onClick={() => setSelectedImg(null)}
+        >
+          <button 
+            className="absolute right-6 top-6 z-[110] rounded-full bg-white/10 p-2 text-white hover:bg-white/20 transition-colors"
+            onClick={(e) => { e.stopPropagation(); setSelectedImg(null); }}
+          >
+            <X className="h-6 w-6" />
+          </button>
+          
+          <div 
+            className="relative max-h-full max-w-full overflow-hidden rounded-xl shadow-2xl animate-in zoom-in-95 duration-300"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img 
+              src={selectedImg} 
+              alt="Gallery Preview" 
+              className="max-h-[90vh] w-auto object-contain"
+            />
+          </div>
+        </div>
+      )}
     </>
   );
 }
