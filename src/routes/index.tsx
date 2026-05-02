@@ -1,6 +1,14 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Star, ShieldCheck, Sparkles, Leaf, ArrowRight, Phone, MessageCircle } from "lucide-react";
-import heroImg from "@/assets/hero-homeopathy.jpg";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
+import slide1 from "@/assets/Hero Section Slide Show Image 1.jpg";
+import slide2 from "@/assets/Hero Section Slide Show Image 2.jpg";
+import slide3 from "@/assets/Hero Section Slide Show Image  3.jpg";
+import slide4 from "@/assets/Hero Section Slide Show Image 4.jpg";
+import slide5 from "@/assets/Hero Section Slide Show Image 5.jpg";
+import slide6 from "@/assets/Hero Section Slide Show Image 6.jpg";
+
 import drImg from "@/assets/dr-paramjeet.jpg";
 import leavesBg from "@/assets/leaves-bg.jpg";
 import { Stat } from "@/components/Stat";
@@ -26,6 +34,15 @@ export const Route = createFileRoute("/")({
   }),
   component: HomePage,
 });
+
+const HERO_SLIDES = [
+  { img: slide1, alt: "Dr. Paramjeet Prabhakar receiving prestigious homeopathy award" },
+  { img: slide2, alt: "Excellence in Homeopathy award ceremony" },
+  { img: slide3, alt: "Recognition for 26+ years of clinical service" },
+  { img: slide4, alt: "Awarded by renowned medical professionals" },
+  { img: slide5, alt: "Honored for contribution to natural healing" },
+  { img: slide6, alt: "Homeofirst clinic achievement award" },
+];
 
 const TREATMENTS = [
   { icon: "🌿", title: "Skin & Hair", desc: "Eczema, psoriasis, acne, hair fall, vitiligo." },
@@ -57,6 +74,10 @@ const TESTIMONIALS = [
 ];
 
 function HomePage() {
+  const [emblaRef] = useEmblaCarousel({ loop: true, duration: 30 }, [
+    Autoplay({ delay: 5000, stopOnInteraction: false }),
+  ]);
+
   return (
     <>
       {/* HERO */}
@@ -69,15 +90,15 @@ function HomePage() {
           <div className="reveal">
             <div className="inline-flex items-center gap-2 rounded-full bg-background/70 px-3 py-1.5 text-xs font-medium text-foreground ring-1 ring-border">
               <Leaf className="h-3.5 w-3.5 text-accent" />
-              Homeopathy Clinic · Hajipur, Bihar
+              Award Winning Homeopathy Clinic · Hajipur
             </div>
             <h1 className="mt-5 font-serif text-4xl leading-[1.05] text-foreground md:text-5xl lg:text-6xl">
               Gentle homeopathy.<br />
               <span className="text-primary italic">Lasting healing.</span>
             </h1>
             <p className="mt-5 max-w-xl text-lg text-muted-foreground">
-              At Homeofirst, Dr. Paramjeet Prabhakar treats the person — not just the disease. Safe,
-              individualised remedies guided by 26+ years of clinical practice.
+              At Homeofirst, Dr. Paramjeet Prabhakar treats the person — not just the disease. Recognized for
+              excellence with 26+ years of clinical practice.
             </p>
 
             <div className="mt-7 flex flex-wrap items-center gap-3">
@@ -110,27 +131,33 @@ function HomePage() {
               </div>
               <div className="flex items-center gap-2">
                 <ShieldCheck className="h-4 w-4 text-accent" />
-                <span>BHMS · Reg. Practitioner</span>
+                <span>Awarded Excellence</span>
               </div>
             </div>
           </div>
 
           <div className="relative">
-            <div className="relative overflow-hidden rounded-[2rem] shadow-glow">
-              <img
-                src={heroImg}
-                alt="Homeopathic globules in a wooden bowl with fresh green leaves"
-                width={1600}
-                height={1200}
-                className="h-full w-full object-cover"
-              />
+            <div className="embla overflow-hidden rounded-[2rem] shadow-glow" ref={emblaRef}>
+              <div className="embla__container flex">
+                {HERO_SLIDES.map((slide, index) => (
+                  <div key={index} className="embla__slide min-w-0 flex-[0_0_100%]">
+                    <img
+                      src={slide.img}
+                      alt={slide.alt}
+                      width={1600}
+                      height={1200}
+                      className="aspect-[4/3] w-full object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
             <div className="absolute -bottom-6 -left-6 hidden rounded-2xl bg-background p-5 shadow-soft ring-1 ring-border md:block">
               <div className="flex items-center gap-3">
                 <Sparkles className="h-5 w-5 text-accent" />
                 <div>
-                  <div className="font-serif text-lg leading-none">2 Lakh+</div>
-                  <div className="text-xs text-muted-foreground">patients treated</div>
+                  <div className="font-serif text-lg leading-none">Recognized</div>
+                  <div className="text-xs text-muted-foreground">for excellence</div>
                 </div>
               </div>
             </div>

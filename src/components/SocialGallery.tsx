@@ -1,6 +1,6 @@
 import { Play, Instagram, ArrowRight } from "lucide-react";
 import drImg from "@/assets/dr-paramjeet.jpg";
-import heroImg from "@/assets/hero-homeopathy.jpg";
+import heroImg from "@/assets/Hero Section Slide Show Image 1.jpg";
 import { SectionHeading } from "./SectionHeading";
 import { Link } from "@tanstack/react-router";
 
