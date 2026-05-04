@@ -234,7 +234,7 @@ function HomePage() {
       <section className="bg-primary-soft/40 py-20 md:py-28">
         <div className="container-page grid items-center gap-12 lg:grid-cols-2">
           <div className="relative">
-            <div className="overflow-hidden rounded-[2rem] shadow-soft">
+            <div className="overflow-hidden rounded-4xl shadow-soft">
               <img
                 src={drImg}
                 alt="Dr. Paramjeet Prabhakar"
@@ -264,7 +264,7 @@ function HomePage() {
                 "Specialises in chronic and lifestyle conditions",
               ].map((b) => (
                 <li key={b} className="flex items-start gap-3">
-                  <Leaf className="mt-0.5 h-4 w-4 flex-shrink-0 text-accent" />
+                  <Leaf className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
                   {b}
                 </li>
               ))}
@@ -315,7 +315,7 @@ function HomePage() {
 
       {/* CTA */}
       <section className="container-page pb-20">
-        <div className="relative overflow-hidden rounded-[2rem] bg-primary px-8 py-16 text-center text-primary-foreground md:px-16 md:py-20">
+        <div className="relative overflow-hidden rounded-4xl bg-primary px-8 py-16 text-center text-primary-foreground md:px-16 md:py-20">
           <div
             className="pointer-events-none absolute inset-0 opacity-10"
             style={{ backgroundImage: `url(${leavesBg})`, backgroundSize: "cover" }}
@@ -348,11 +348,11 @@ function HomePage() {
       {/* LIGHTBOX MODAL */}
       {selectedImg && (
         <div 
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-ink/95 p-4 md:p-10 transition-all animate-in fade-in duration-300"
+          className="fixed inset-0 z-100 flex items-center justify-center bg-ink/95 p-4 md:p-10 transition-all animate-in fade-in duration-300"
           onClick={() => setSelectedImg(null)}
         >
           <button 
-            className="absolute right-6 top-6 z-[110] rounded-full bg-white/10 p-2 text-white hover:bg-white/20 transition-colors"
+            className="absolute right-6 top-6 z-110 rounded-full bg-white/10 p-2 text-white hover:bg-white/20 transition-colors"
             onClick={(e) => { e.stopPropagation(); setSelectedImg(null); }}
           >
             <X className="h-6 w-6" />

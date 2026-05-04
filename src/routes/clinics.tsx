@@ -40,7 +40,7 @@ function ClinicsPage() {
           {SITE.clinics.map((clinic) => (
             <div
               key={clinic.id}
-              className={`relative overflow-hidden rounded-[2rem] border p-8 transition-all md:p-12 ${
+              className={`relative overflow-hidden rounded-4xl border p-8 transition-all md:p-12 ${
                 clinic.status === "active"
                   ? "border-primary/20 bg-card shadow-soft"
                   : "border-border bg-muted/30 opacity-80"
@@ -63,7 +63,7 @@ function ClinicsPage() {
               
               <div className="mt-8 space-y-4">
                 <div className="flex items-start gap-4 text-muted-foreground">
-                  <MapPin className="mt-1 h-5 w-5 flex-shrink-0 text-primary" />
+                  <MapPin className="mt-1 h-5 w-5 shrink-0 text-primary" />
                   <p className="text-sm">{clinic.address}</p>
                 </div>
                 

@@ -76,7 +76,7 @@ function TreatmentsPage() {
               align="left"
             />
           </div>
-          <div className="overflow-hidden rounded-[2rem] shadow-soft">
+          <div className="overflow-hidden rounded-4xl shadow-soft">
             <img
               src={flatlay}
               alt="Homeopathic remedies with fresh leaves"
@@ -100,7 +100,7 @@ function TreatmentsPage() {
               <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                 {g.items.map((i) => (
                   <li key={i} className="flex items-start gap-2">
-                    <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-accent" />
+                    <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent" />
                     {i}
                   </li>
                 ))}
@@ -111,7 +111,7 @@ function TreatmentsPage() {
       </section>
 
       <section className="container-page pb-20">
-        <div className="rounded-[2rem] bg-primary px-8 py-14 text-center text-primary-foreground md:px-16">
+        <div className="rounded-4xl bg-primary px-8 py-14 text-center text-primary-foreground md:px-16">
           <h2 className="font-serif text-3xl md:text-4xl">Don't see your condition?</h2>
           <p className="mx-auto mt-3 max-w-xl text-primary-foreground/85">
             Many conditions respond well to homeopathy. Message us on WhatsApp and we'll guide you.

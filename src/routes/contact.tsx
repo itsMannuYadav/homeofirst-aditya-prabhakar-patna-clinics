@@ -116,7 +116,7 @@ function ContactPage() {
 
             <div className="mt-7 space-y-5">
               <div className="flex gap-4 rounded-2xl border border-border bg-card p-5">
-                <div className="inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-primary-soft text-primary">
+                <div className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary-soft text-primary">
                   <MapPin className="h-5 w-5" />
                 </div>
                 <div>
@@ -126,7 +126,7 @@ function ContactPage() {
               </div>
 
               <div className="flex gap-4 rounded-2xl border border-border bg-card p-5">
-                <div className="inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-primary-soft text-primary">
+                <div className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary-soft text-primary">
                   <Phone className="h-5 w-5" />
                 </div>
                 <div>
@@ -138,7 +138,7 @@ function ContactPage() {
               </div>
 
               <div className="flex gap-4 rounded-2xl border border-border bg-card p-5">
-                <div className="inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-primary-soft text-primary">
+                <div className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary-soft text-primary">
                   <Mail className="h-5 w-5" />
                 </div>
                 <div>
@@ -150,7 +150,7 @@ function ContactPage() {
               </div>
 
               <div className="flex gap-4 rounded-2xl border border-border bg-card p-5">
-                <div className="inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-primary-soft text-primary">
+                <div className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary-soft text-primary">
                   <Clock className="h-5 w-5" />
                 </div>
                 <div>
@@ -173,7 +173,7 @@ function ContactPage() {
           <div>
             <h3 className="font-serif text-2xl">Find us</h3>
             <span className="leaf-divider mt-3" />
-            <div className="mt-7 overflow-hidden rounded-[2rem] border border-border shadow-soft">
+            <div className="mt-7 overflow-hidden rounded-4xl border border-border shadow-soft">
               <iframe
                 title="Homeofirst clinic location in Hajipur"
                 src="https://www.google.com/maps?q=Hajipur+Bihar&output=embed"
@@ -244,7 +244,7 @@ function ContactPage() {
                     aria-expanded={isOpen}
                   >
                     <span className="font-serif text-lg text-foreground md:text-xl">{f.q}</span>
-                    <span className={`inline-flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full transition-colors ${isOpen ? 'bg-primary text-primary-foreground' : 'bg-primary-soft text-primary'}`}>
+                    <span className={`inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-colors ${isOpen ? 'bg-primary text-primary-foreground' : 'bg-primary-soft text-primary'}`}>
                       {isOpen ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
                     </span>
                   </button>

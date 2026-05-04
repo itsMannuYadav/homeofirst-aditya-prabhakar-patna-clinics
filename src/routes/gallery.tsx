@@ -130,11 +130,11 @@ function GalleryPage() {
       {/* LIGHTBOX MODAL */}
       {selectedImg && (
         <div 
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-ink/95 p-4 md:p-10 transition-all animate-in fade-in duration-300"
+          className="fixed inset-0 z-100 flex items-center justify-center bg-ink/95 p-4 md:p-10 transition-all animate-in fade-in duration-300"
           onClick={() => setSelectedImg(null)}
         >
           <button 
-            className="absolute right-6 top-6 z-[110] rounded-full bg-white/10 p-2 text-white hover:bg-white/20 transition-colors"
+            className="absolute right-6 top-6 z-110 rounded-full bg-white/10 p-2 text-white hover:bg-white/20 transition-colors"
             onClick={(e) => { e.stopPropagation(); setSelectedImg(null); }}
           >
             <X className="h-6 w-6" />

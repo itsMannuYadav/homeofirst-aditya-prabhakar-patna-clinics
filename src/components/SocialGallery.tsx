@@ -61,14 +61,14 @@ export function SocialGallery({
               href={reel.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative aspect-[9/16] overflow-hidden rounded-2xl bg-muted shadow-soft ring-1 ring-border transition-all hover:-translate-y-1 hover:shadow-glow"
+              className="group relative aspect-9/16 overflow-hidden rounded-2xl bg-muted shadow-soft ring-1 ring-border transition-all hover:-translate-y-1 hover:shadow-glow"
             >
               <img
                 src={reel.thumbnail}
                 alt={reel.title}
                 className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-transparent opacity-60 transition-opacity group-hover:opacity-80" />
+              <div className="absolute inset-0 bg-linear-to-t from-ink/80 via-transparent to-transparent opacity-60 transition-opacity group-hover:opacity-80" />
               
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="flex h-16 w-16 items-center justify-center rounded-full bg-background/20 backdrop-blur-sm transition-transform duration-300 group-hover:scale-110">

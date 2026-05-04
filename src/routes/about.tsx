@@ -69,7 +69,7 @@ function AboutPage() {
           </div>
 
           <div className="relative">
-            <div className="relative overflow-hidden rounded-[2rem] bg-ink shadow-glow">
+            <div className="relative overflow-hidden rounded-4xl bg-ink shadow-glow">
               <video
                 src={kapilVideo}
                 className="h-full w-full object-cover"
@@ -79,7 +79,7 @@ function AboutPage() {
                 autoPlay
                 playsInline
               />
-              <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-ink/40 to-transparent" />
+              <div className="absolute inset-0 pointer-events-none bg-linear-to-t from-ink/40 to-transparent" />
             </div>
             <div className="absolute -bottom-6 -right-6 rounded-2xl bg-background p-5 shadow-soft ring-1 ring-border">
               <div className="flex items-center gap-3">
@@ -114,7 +114,7 @@ function AboutPage() {
               </p>
             </div>
           </div>
-          <div className="flex items-center justify-center rounded-[2rem] bg-primary-soft/30 p-8">
+          <div className="flex items-center justify-center rounded-4xl bg-primary-soft/30 p-8">
             <div className="max-w-xs text-center">
               <Heart className="mx-auto h-12 w-12 text-primary" />
               <h4 className="mt-6 font-serif text-2xl">Holistic Healing</h4>
