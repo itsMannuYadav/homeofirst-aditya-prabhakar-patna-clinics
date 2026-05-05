@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState, useEffect } from "react";
-import { Star, StarHalf,ShieldCheck, Sparkles, Leaf, ArrowRight, Phone, MessageCircle, Maximize2, X } from "lucide-react";
+import { Star, StarHalf,ShieldCheck, Sparkles, Leaf, ArrowRight, Phone, MessageCircle, Maximize2, X, Award } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import slide1 from "@/assets/Hero Section Slide Show Image 1.jpeg";
@@ -9,6 +9,7 @@ import slide3 from "@/assets/Hero Section Slide Show Image 3.jpeg";
 import slide4 from "@/assets/Hero Section Slide Show Image 4.jpeg";
 import slide5 from "@/assets/Hero Section Slide Show Image 5.jpeg";
 import slide6 from "@/assets/Hero Section Slide Show Image 6.jpeg";
+import intro from "@/assets/intro video.mp4"
 
 import drImg from "@/assets/dr Paramjeet Prabhakar.jpeg";
 import leavesBg from "@/assets/leaves-bg.jpg";
@@ -196,6 +197,37 @@ function HomePage() {
           <Stat value="100%" label="Safe & natural" sub="No side effects" />
         </div>
       </section>
+
+      {/* INTRO VEDIO */}
+      <section className="bg-primary-soft/40 py-20">
+        <div className="container-page">
+          <SectionHeading eyebrow="Why Choose Homeofirst" title="Dr. Paramjeet Prabhakar" />
+          <div className="relative">
+            <div className="relative overflow-hidden rounded-4xl bg-ink shadow-glow">
+              <video
+                src={intro}
+                className="h-full w-full object-cover"
+                controls
+                muted
+                loop
+                autoPlay
+                playsInline
+              />
+              <div className="absolute inset-0 pointer-events-none bg-linear-to-t from-ink/40 to-transparent" />
+            </div>
+            <div className="absolute -bottom-6 -right-6 rounded-2xl bg-background p-5 shadow-soft ring-1 ring-border">
+              <div className="flex items-center gap-3">
+                <Award className="h-5 w-5 text-accent" />
+                <div>
+                  <div className="font-serif text-lg leading-none">Distinction</div>
+                  <div className="text-xs text-muted-foreground">26+ Years of Trusted Care</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       {/* TREATMENTS */}
       <section className="py-20 md:py-28">
