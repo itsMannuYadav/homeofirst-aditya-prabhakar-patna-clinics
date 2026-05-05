@@ -101,6 +101,15 @@ export function SiteHeader() {
               >
                 Book on WhatsApp
               </a>
+              <a
+                href={SITE.form_link}
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-full bg-primary px-4 py-2.5 text-center text-sm font-medium text-primary-foreground"
+              >
+                Book Appointment
+              </a>
+
             </div>
           </nav>
         </div>
