@@ -24,7 +24,7 @@ export function SiteHeader() {
           <Logo />
         </Link>
 
-        <nav className="hidden items-center gap-7 lg:flex">
+        <nav className="hidden items-center gap-5 lg:flex">
           {NAV.map((n) => (
             <Link
               key={n.to}
@@ -38,7 +38,7 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden items-center gap-2 lg:flex">
           <a
             href={SITE.phoneHref}
             className="inline-flex items-center gap-2 text-sm font-medium text-foreground"
@@ -54,6 +54,15 @@ export function SiteHeader() {
           >
             Book on WhatsApp
           </a>
+          <a
+            href={SITE.form_link}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-soft transition-transform hover:scale-[1.02]"
+          >
+            Book Appointment
+          </a>
+
         </div>
 
         <button

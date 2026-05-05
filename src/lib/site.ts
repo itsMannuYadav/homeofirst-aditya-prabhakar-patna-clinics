@@ -13,7 +13,9 @@ export const SITE = {
   email: "homeofirstt@gmail.com",
   instagram: "https://www.instagram.com/homeofirst._?igsh=NDQ0YnYxb2RrN2xv",
   address: "Near Gandhi Chowk, Station Road, Hajipur, Bihar 844101",
+  form_link:"https://forms.gle/da3EHKfv7TCAeUNZ6",
   hours: "Mon – Sat · 9:00 AM – 8:00 PM (Sun: by appointment)",
+  google_map_address: "https://share.google/lqSC2bca0ImmwuXQV",
   stats: {
     years: "26+",
     patients: "2 Lakh+",

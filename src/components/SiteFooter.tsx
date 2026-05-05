@@ -12,7 +12,7 @@ export function SiteFooter() {
             <Logo />
           </div>
           <p className="mt-5 max-w-xs text-sm text-primary-foreground/75">
-            A homeopathy clinic in Hajipur dedicated to gentle, individualised healing — guided by
+            A homeopathy clinic in Hajipur dedicated to gentle, individualised healing guided by
             Dr. Paramjeet Prabhakar.
           </p>
         </div>
@@ -21,8 +21,9 @@ export function SiteFooter() {
           <h4 className="font-serif text-lg text-primary-foreground">Visit</h4>
           <span className="leaf-divider mt-3 mb-4 bg-primary-foreground/40" />
           <ul className="space-y-3 text-sm text-primary-foreground/80">
-            <li className="flex gap-3"><MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />{SITE.address}</li>
-            <li className="flex gap-3"><Clock className="h-4 w-4 mt-0.5 flex-shrink-0" />{SITE.hours}</li>
+            <li className="flex gap-3"><MapPin className="h-4 w-4 mt-0.5 shrink-0" />{SITE.address}</li>
+            <li className="flex gap-3"><Clock className="h-4 w-4 mt-0.5 shrink-0" />{SITE.hours}</li>
+            <li className="flex gap-3"><MapPin className="h-4 w-4 mt-0.5" /><a href={`${SITE.google_map_address}`}>location</a></li>
           </ul>
         </div>
 

@@ -114,6 +114,11 @@ function HomePage() {
               Dr. Paramjeet Prabhakar (Prabhakar's Clinic, Hajipur) treats the person not just the disease.
               Experience gentle, lasting healing on the Homeofirst platform.
             </p>
+            <p className="mt-5 max-w-xl text-lg text-muted-foreground">
+              🎉 FREE Consultation (₹0 Fee)
+              <br />
+              🚚  Doorstep Delivery of Medicines
+            </p>
 
             <div className="mt-7 flex flex-wrap items-center gap-3">
               <a
