@@ -220,15 +220,6 @@ function HomePage() {
               />
               <div className="absolute inset-0 pointer-events-none bg-linear-to-t from-ink/40 to-transparent" />
             </div>
-            <div className="absolute -bottom-6 -right-6 rounded-2xl bg-background p-5 shadow-soft ring-1 ring-border">
-              <div className="flex items-center gap-3">
-                <Award className="h-5 w-5 text-accent" />
-                <div>
-                  <div className="font-serif text-lg leading-none">Distinction</div>
-                  <div className="text-xs text-muted-foreground">26+ Years of Trusted Care</div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -271,12 +262,11 @@ function HomePage() {
       <section className="bg-primary-soft/40 py-20 md:py-28">
         <div className="container-page grid items-center gap-12 lg:grid-cols-2">
           <div className="relative">
-            <div className="overflow-hidden rounded-4xl shadow-soft">
+            <div className="overflow-hidden rounded-4xl shadow-soft h-150 sm:h-250">
               <img
                 src={drImg}
                 alt="Dr. Paramjeet Prabhakar"
                 width={1024}
-                height={1280}
                 loading="lazy"
                 className="h-full w-full object-cover"
               />
