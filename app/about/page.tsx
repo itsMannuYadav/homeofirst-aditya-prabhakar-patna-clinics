@@ -1,0 +1,127 @@
+import { SectionHeading } from "@/components/SectionHeading";
+import { Award, Heart, Leaf, Users } from "lucide-react";
+
+const VALUES = [
+  { icon: Heart, title: "Patient First", desc: "We listen deeply. Every treatment plan begins with truly understanding you." },
+  { icon: Leaf, title: "Natural & Safe", desc: "Homeopathic remedies are gentle, non-toxic, and free from side effects." },
+  { icon: Award, title: "Proven Practice", desc: "Backed by 26+ years of clinical experience and continuous learning." },
+  { icon: Users, title: "Family Care", desc: "From newborns to grandparents — care for every member of your family." },
+];
+
+export default function About() {
+  return (
+    <>
+      <section className="relative overflow-hidden bg-gradient-hero py-20 md:py-28">
+        <div
+          className="pointer-events-none absolute inset-0 opacity-[0.07]"
+          style={{ backgroundImage: `url('/assets/leaves-bg.jpg')`, backgroundSize: "cover" }}
+        />
+        <div className="container-page relative">
+          <SectionHeading
+            eyebrow="The Platform"
+            title="Expanding the reach of healing"
+            description="Homeofirst is more than a clinic; it is a platform dedicated to bringing elite homeopathic care to families everywhere, starting with our flagship legacy, Prabhakar's Clinic."
+          />
+        </div>
+      </section>
+
+      <section className="py-20">
+        <div className="container-page grid gap-12 lg:grid-cols-2">
+          <div>
+            <h3 className="font-serif text-3xl text-foreground">Our story</h3>
+            <span className="leaf-divider mt-3" />
+            <div className="mt-6 space-y-4 text-base text-muted-foreground font-inter">
+              <p>
+                Homeofirst grew from Dr. Paramjeet Prabhakar's lifelong commitment to homeopathy — a
+                medicine he sees not as an alternative, but as a complete system of healing rooted
+                in observation, individualisation, and respect for the body's wisdom.
+              </p>
+              <p>
+                Over 26+ years and more than 2 lakh consultations, Prabhakar's Clinic has become a
+                quiet landmark in Hajipur — the flagship location for the Homeofirst vision of
+                individualised, gentle care.
+              </p>
+              <p>
+                We don't believe in quick fixes. We believe in remedies chosen carefully, follow-ups
+                that matter, and the kind of healing that lasts.
+              </p>
+            </div>
+          </div>
+
+          <div className="relative">
+            <div className="relative overflow-hidden rounded-4xl bg-ink shadow-glow">
+              <video
+                src="/assets/Receiving Award from Kapil Dev Video.mp4"
+                className="h-full w-full object-cover"
+                controls
+                muted
+                loop
+                autoPlay
+                playsInline
+              />
+              <div className="absolute inset-0 pointer-events-none bg-linear-to-t from-ink/40 to-transparent" />
+            </div>
+            <div className="absolute -bottom-6 -right-6 rounded-2xl bg-background p-5 shadow-soft ring-1 ring-border">
+              <div className="flex items-center gap-3">
+                <Award className="h-5 w-5 text-accent" />
+                <div>
+                  <div className="font-serif text-lg leading-none">Distinction</div>
+                  <div className="text-xs text-muted-foreground">Received from Kapil Dev</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="bg-card py-20">
+        <div className="container-page grid gap-12 lg:grid-cols-2">
+          <div>
+            <h3 className="font-serif text-3xl text-foreground">Our philosophy</h3>
+            <span className="leaf-divider mt-3" />
+            <div className="mt-6 space-y-4 text-base text-muted-foreground">
+              <p>
+                Homeopathy works on the principle of <em>similia similibus curentur</em> — like
+                cures like. A substance that produces symptoms in a healthy person can, in
+                minute potencies, stimulate healing in someone unwell.
+              </p>
+              <p>
+                But the science is only half the story. The other half is the art of case-taking —
+                of understanding the person behind the patient, their constitution, their
+                emotions, and their daily life.
+              </p>
+              <p>
+                That's how we work. Slowly, carefully, and always with the whole person in mind.
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center justify-center rounded-4xl bg-primary-soft/30 p-8">
+            <div className="max-w-xs text-center">
+              <Heart className="mx-auto h-12 w-12 text-primary" />
+              <h4 className="mt-6 font-serif text-2xl">Holistic Healing</h4>
+              <p className="mt-3 text-sm text-muted-foreground">
+                We believe in treating the person, not just the disease. Our approach is gentle, deep, and individualised.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-primary-soft/40 py-20">
+        <div className="container-page">
+          <SectionHeading eyebrow="What we stand for" title="Our values" />
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {VALUES.map((v) => (
+              <div key={v.title} className="rounded-2xl bg-card p-7 shadow-soft">
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-primary-foreground">
+                  <v.icon className="h-5 w-5" />
+                </div>
+                <h4 className="mt-5 font-serif text-xl">{v.title}</h4>
+                <p className="mt-2 text-sm text-muted-foreground">{v.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
