@@ -1,5 +1,20 @@
 import { SectionHeading } from "@/components/SectionHeading";
 import { Award, Heart, Leaf, Users } from "lucide-react";
+import { generateSEO } from "@/lib/seo";
+
+export const metadata = generateSEO({
+  title: "About Us",
+  description:
+    "Homeofirst is an online homeopathic consultation platform connecting patients with experienced doctors.",
+
+  url: "/about",
+
+  keywords: [
+    "Homeofirst",
+    "Homeopathy",
+    "Online Doctor",
+  ],
+});
 
 const VALUES = [
   { icon: Heart, title: "Patient First", desc: "We listen deeply. Every treatment plan begins with truly understanding you." },

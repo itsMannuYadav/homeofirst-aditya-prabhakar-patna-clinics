@@ -9,8 +9,7 @@ import { SITE } from "@/lib/site";
 const NAV = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
-  { to: "/doctor", label: "The Doctor" },
-  { to: "/clinics", label: "Clinics" },
+  { to: "/doctor", label: "Doctor" },
   { to: "/treatments", label: "Treatments" },
   { to: "/gallery", label: "Gallery" },
   { to: "/contact", label: "Contact" },

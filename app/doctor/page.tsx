@@ -4,6 +4,22 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { SITE } from "@/lib/site";
 import { ArrowRight, MessageCircle, Phone, Calendar, GraduationCap, Award, Users } from "lucide-react";
 import drImg from "@/public/assets/dr Paramjeet Prabhakar.jpeg";
+import { generateSEO } from "@/lib/seo";
+
+export const metadata = generateSEO({
+  title: "Doctor - Dr. Paramjeet Prabhakar | Homeofirst",
+  description:
+    "Homeofirst is an online homeopathic consultation platform connecting patients with experienced doctors.",
+
+  url: "/doctor",
+
+  keywords: [
+    "Homeofirst",
+    "Homeopathy",
+    "Online Doctor",
+  ],
+});
+
 
 const TIMELINE = [
   { year: "1998", text: "Began private practice in Hajipur as a Homeopathy Specialist." },
