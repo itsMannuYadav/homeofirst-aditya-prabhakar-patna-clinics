@@ -3,6 +3,7 @@
 import { FormEvent, useEffect, useRef, useState } from "react";
 import { HeartPulse, MessageCircleHeart, Send, X } from "lucide-react";
 import { ChatMessage } from "./ChatMessage";
+import { offlineResponse, sanitizeActions } from "@/lib/chat/fallbacks";
 import type { ChatAction, ChatApiResponse } from "@/lib/chat/types";
 
 type UiMessage = {
@@ -11,6 +12,9 @@ type UiMessage = {
   content: string;
   actions?: ChatAction[];
 };
+
+const MAX_INPUT = 500;
+const FETCH_TIMEOUT_MS = 30_000;
 
 const QUICK_REPLIES = [
   "What are the clinic hours?",
@@ -28,6 +32,19 @@ const WELCOME: UiMessage = {
 
 function uid() {
   return `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+}
+
+function toAssistantMessage(data: ChatApiResponse): UiMessage {
+  const reply =
+    typeof data.reply === "string" && data.reply.trim()
+      ? data.reply.trim()
+      : offlineResponse().reply;
+  return {
+    id: uid(),
+    role: "assistant",
+    content: reply,
+    actions: sanitizeActions(data.actions),
+  };
 }
 
 export function MyFirstCareWidget() {
@@ -49,7 +66,7 @@ export function MyFirstCareWidget() {
   }, [open]);
 
   async function sendMessage(text: string) {
-    const trimmed = text.trim();
+    const trimmed = text.trim().slice(0, MAX_INPUT);
     if (!trimmed || loading) return;
 
     const userMsg: UiMessage = { id: uid(), role: "user", content: trimmed };
@@ -57,6 +74,9 @@ export function MyFirstCareWidget() {
     setMessages(nextMessages);
     setInput("");
     setLoading(true);
+
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
 
     try {
       const payloadMessages = nextMessages
@@ -67,31 +87,27 @@ export function MyFirstCareWidget() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ messages: payloadMessages }),
+        signal: controller.signal,
       });
 
-      const data = (await res.json()) as ChatApiResponse & { error?: string };
-      const reply =
-        typeof data.reply === "string" && data.reply
-          ? data.reply
-          : "Please try WhatsApp or call the clinic — we are happy to help.";
-      const actions = Array.isArray(data.actions) ? data.actions : [];
+      let data: ChatApiResponse & { error?: string };
+      try {
+        data = (await res.json()) as ChatApiResponse & { error?: string };
+      } catch {
+        setMessages((prev) => [...prev, toAssistantMessage(offlineResponse())]);
+        return;
+      }
 
-      setMessages((prev) => [
-        ...prev,
-        { id: uid(), role: "assistant", content: reply, actions },
-      ]);
+      if (typeof data.reply === "string" && data.reply.trim()) {
+        setMessages((prev) => [...prev, toAssistantMessage(data)]);
+        return;
+      }
+
+      setMessages((prev) => [...prev, toAssistantMessage(offlineResponse())]);
     } catch {
-      setMessages((prev) => [
-        ...prev,
-        {
-          id: uid(),
-          role: "assistant",
-          content:
-            "Could not reach the assistant. Please try WhatsApp or call the clinic.",
-          actions: ["whatsapp", "call"],
-        },
-      ]);
+      setMessages((prev) => [...prev, toAssistantMessage(offlineResponse())]);
     } finally {
+      window.clearTimeout(timeout);
       setLoading(false);
     }
   }
@@ -179,9 +195,10 @@ export function MyFirstCareWidget() {
             <input
               ref={inputRef}
               value={input}
-              onChange={(e) => setInput(e.target.value)}
+              onChange={(e) => setInput(e.target.value.slice(0, MAX_INPUT))}
               placeholder="Ask a question…"
               disabled={loading}
+              maxLength={MAX_INPUT}
               className="min-w-0 flex-1 rounded-full border border-input bg-background px-3.5 py-2 text-sm outline-none ring-ring focus:ring-2 disabled:opacity-60"
               aria-label="Message My First Care"
             />

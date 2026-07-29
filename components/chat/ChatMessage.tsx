@@ -48,6 +48,7 @@ export function ChatMessage({ role, content, actions = [] }: ChatMessageProps) {
           <div className="mt-3 flex flex-wrap gap-2">
             {actions.map((action) => {
               const meta = ACTION_META[action];
+              if (!meta?.href) return null;
               const Icon = meta.Icon;
               return (
                 <a
