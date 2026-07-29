@@ -28,7 +28,7 @@ Q: Online follow-ups?
 A: Follow-ups can be arranged via WhatsApp for patients outside Hajipur. First visit preferred in person.
 
 Q: How to book?
-A: WhatsApp is fastest. Call during hours. Walk-ins welcome; appointments prioritized. Online booking form is also available.
+A: Appointments are booked ONLY via the official online booking form on the website (Book appointment button). My First Care cannot book or confirm slots in chat. After submitting the form, the clinic team confirms the appointment. Walk-ins are welcome but appointments are prioritized. For urgent help, call or WhatsApp the clinic.
 `.trim();
 
 export function buildClinicKnowledge(): string {

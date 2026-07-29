@@ -1,3 +1,4 @@
+import { isBookingTurn, bookingFormResponse } from "@/lib/chat/booking";
 import { buildSystemPrompt } from "@/lib/chat/system-prompt";
 import type {
   ChatAction,
@@ -115,6 +116,10 @@ export async function POST(request: Request) {
       { error: "messages must be a non-empty array of {role, content}" },
       { status: 400 },
     );
+  }
+
+  if (isBookingTurn(messages)) {
+    return Response.json(bookingFormResponse(messages) satisfies ChatApiResponse);
   }
 
   try {

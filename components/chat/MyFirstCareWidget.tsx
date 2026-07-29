@@ -15,15 +15,15 @@ type UiMessage = {
 const QUICK_REPLIES = [
   "What are the clinic hours?",
   "Tell me about Dr. Paramjeet",
-  "How do I book an appointment?",
+  "How do I book via the form?",
 ] as const;
 
 const WELCOME: UiMessage = {
   id: "welcome",
   role: "assistant",
   content:
-    "Namaste — I am My First Care. Ask about the clinic, Dr. Paramjeet, or gentle care tips. I never prescribe medicines; for that, our doctor is here for you.",
-  actions: ["book", "whatsapp"],
+    "Namaste — I am My First Care. Ask about the clinic, Dr. Paramjeet, or gentle care tips. I never prescribe medicines; for that, our doctor is here for you. To book a visit, use the appointment form below.",
+  actions: ["book"],
 };
 
 function uid() {
