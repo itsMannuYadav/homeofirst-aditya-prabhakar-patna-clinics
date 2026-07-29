@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Inter, Manrope } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { MyFirstCareWidget } from "@/components/chat/MyFirstCareWidget";
 import { organizationSchema } from "@/lib/schema/organisations";
 
 const geistSans = Geist({
@@ -76,6 +77,7 @@ export default function RootLayout({
           {children}
         </main>
         <SiteFooter />
+        <MyFirstCareWidget />
       </body>
     </html>
   );
