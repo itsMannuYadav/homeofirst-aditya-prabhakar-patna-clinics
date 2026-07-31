@@ -63,7 +63,7 @@ export function DoctorCard() {
           </h5>
         </div>
         <p className="text-xs text-emerald-800 font-medium">
-          BHMS, MD (Homeopathy) • {SITE.stats.years} Clinical Experience
+          Homeopathy Specialist • {SITE.stats.years} Clinical Experience
         </p>
         <p className="text-xs text-emerald-900/70 pt-1 leading-relaxed">
           Pioneer in constitution-based homeopathic treatment for chronic skin, hair, and joint ailments in Bihar.
