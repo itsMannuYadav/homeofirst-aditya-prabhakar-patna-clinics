@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { Logo } from "./Logo";
 import { SITE } from "@/lib/site";
+import { useBookingForm } from "./BookingFormModal";
 
 const NAV = [
   { to: "/", label: "Home" },
@@ -19,6 +20,7 @@ const NAV = [
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const { openForm } = useBookingForm();
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur-md">
@@ -59,14 +61,13 @@ export function SiteHeader() {
           >
             Book on WhatsApp
           </a>
-          <a
-            href={SITE.form_link}
-            target="_blank"
-            rel="noreferrer"
+          <button
+            type="button"
+            onClick={openForm}
             className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-soft transition-transform hover:scale-[1.02]"
           >
             Book Appointment
-          </a>
+          </button>
 
         </div>
 
@@ -108,14 +109,16 @@ export function SiteHeader() {
               >
                 Book on WhatsApp
               </a>
-              <a
-                href={SITE.form_link}
-                target="_blank"
-                rel="noreferrer"
+              <button
+                type="button"
+                onClick={() => {
+                  setOpen(false);
+                  openForm();
+                }}
                 className="rounded-full bg-primary px-4 py-2.5 text-center text-sm font-medium text-primary-foreground"
               >
                 Book Appointment
-              </a>
+              </button>
 
             </div>
           </nav>

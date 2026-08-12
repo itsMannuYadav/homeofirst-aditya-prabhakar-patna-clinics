@@ -1,15 +1,16 @@
+"use client";
+
 import { Calendar, MessageCircle, Phone } from "lucide-react";
 import { SITE } from "@/lib/site";
 import type { ChatAction } from "@/lib/chat/types";
+import { useBookingForm } from "@/components/BookingFormModal";
 
 const ACTION_META: Record<
   ChatAction,
-  { label: string; href: string; external?: boolean; Icon: typeof Phone }
+  { label: string; href?: string; external?: boolean; Icon: typeof Phone }
 > = {
   book: {
     label: "Book appointment",
-    href: SITE.form_link,
-    external: true,
     Icon: Calendar,
   },
   whatsapp: {
@@ -33,6 +34,7 @@ type ChatMessageProps = {
 
 export function ChatMessage({ role, content, actions = [] }: ChatMessageProps) {
   const isUser = role === "user";
+  const { openForm } = useBookingForm();
 
   return (
     <div className={`flex ${isUser ? "justify-end" : "justify-start"}`}>
@@ -48,15 +50,34 @@ export function ChatMessage({ role, content, actions = [] }: ChatMessageProps) {
           <div className="mt-3 flex flex-wrap gap-2">
             {actions.map((action) => {
               const meta = ACTION_META[action];
-              if (!meta?.href) return null;
+              if (!meta) return null;
               const Icon = meta.Icon;
+              const className =
+                "inline-flex items-center gap-1.5 rounded-full bg-primary px-3 py-1.5 text-xs font-medium text-primary-foreground transition-transform hover:scale-[1.02]";
+
+              if (action === "book") {
+                return (
+                  <button
+                    key={action}
+                    type="button"
+                    onClick={openForm}
+                    className={className}
+                  >
+                    <Icon className="h-3.5 w-3.5" />
+                    {meta.label}
+                  </button>
+                );
+              }
+
+              if (!meta.href) return null;
+
               return (
                 <a
                   key={action}
                   href={meta.href}
                   target={meta.external ? "_blank" : undefined}
                   rel={meta.external ? "noreferrer" : undefined}
-                  className="inline-flex items-center gap-1.5 rounded-full bg-primary px-3 py-1.5 text-xs font-medium text-primary-foreground transition-transform hover:scale-[1.02]"
+                  className={className}
                 >
                   <Icon className="h-3.5 w-3.5" />
                   {meta.label}

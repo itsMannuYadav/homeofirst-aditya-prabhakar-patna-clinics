@@ -1,9 +1,14 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import { SITE } from "@/lib/site";
 import { Calendar, PhoneCall, MessageSquare, ShieldCheck } from "lucide-react";
+import { useBookingForm } from "@/components/BookingFormModal";
 
 export function CallToAction() {
+  const { openForm } = useBookingForm();
+
   return (
     <div className="my-10 rounded-2xl bg-gradient-to-br from-emerald-900 via-emerald-800 to-teal-900 p-6 md:p-10 text-white shadow-xl relative overflow-hidden">
       {/* Decorative leaf/glow accents */}
@@ -35,15 +40,14 @@ export function CallToAction() {
             Book WhatsApp Consultation
           </Link>
 
-          <Link
-            href={SITE.form_link}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            type="button"
+            onClick={openForm}
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-medium text-sm border border-white/20 transition-all backdrop-blur-sm"
           >
             <Calendar className="w-4 h-4" />
             Fill Patient Form
-          </Link>
+          </button>
 
           <a
             href={SITE.phoneHref}

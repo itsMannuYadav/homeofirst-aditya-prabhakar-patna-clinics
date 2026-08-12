@@ -4,6 +4,7 @@ import "./globals.css";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { MyFirstCareWidget } from "@/components/chat/MyFirstCareWidget";
+import { BookingFormProvider } from "@/components/BookingFormModal";
 import { organizationSchema } from "@/lib/schema/organisations";
 
 const geistSans = Geist({
@@ -72,12 +73,14 @@ export default function RootLayout({
             __html: JSON.stringify(organizationSchema),
           }}
         />
-        <SiteHeader />
-        <main className="flex-1">
-          {children}
-        </main>
-        <SiteFooter />
-        <MyFirstCareWidget />
+        <BookingFormProvider>
+          <SiteHeader />
+          <main className="flex-1">
+            {children}
+          </main>
+          <SiteFooter />
+          <MyFirstCareWidget />
+        </BookingFormProvider>
       </body>
     </html>
   );
