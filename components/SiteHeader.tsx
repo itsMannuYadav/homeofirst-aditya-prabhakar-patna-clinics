@@ -2,7 +2,7 @@
 import Link from "next/link";
 import {usePathname} from "next/navigation";
 import { useState } from "react";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, MessageCircle } from "lucide-react";
 import { Logo } from "./Logo";
 import { SITE } from "@/lib/site";
 import { useBookingForm } from "./BookingFormModal";
@@ -26,20 +26,25 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur-md">
-      <div className="container-page flex h-18 items-center justify-between py-3">
-        <Link href="/" aria-label="Homeofirst home" onClick={() => setOpen(false)}>
+      <div className="container-page flex h-16 items-center gap-4 py-2 xl:gap-6">
+        <Link
+          href="/"
+          aria-label="Homeofirst home"
+          onClick={() => setOpen(false)}
+          className="shrink-0"
+        >
           <Logo />
         </Link>
 
-        <nav className="hidden items-center gap-5 lg:flex">
+        <nav className="hidden min-w-0 flex-1 items-center justify-center gap-1 xl:flex 2xl:gap-2">
           {NAV.map((n) => (
             <Link
               key={n.to}
               href={n.to}
               className={
                 pathname === n.to
-                  ? "text-sm font-medium text-foreground"
-                  : "text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                  ? "rounded-full px-2.5 py-1.5 text-[13px] font-medium text-foreground 2xl:px-3"
+                  : "rounded-full px-2.5 py-1.5 text-[13px] font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground 2xl:px-3"
               }
             >
               {n.label}
@@ -47,42 +52,44 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-2 lg:flex">
+        <div className="ml-auto hidden shrink-0 items-center gap-1.5 xl:flex 2xl:gap-2">
           <a
             href={SITE.phoneHref}
-            className="inline-flex items-center gap-2 text-sm font-medium text-foreground"
+            aria-label={`Call ${SITE.phone}`}
+            title={SITE.phone}
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:bg-muted"
           >
             <Phone className="h-4 w-4 text-accent" />
-            {SITE.phone}
           </a>
           <a
             href={SITE.whatsappHref}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-soft transition-transform hover:scale-[1.02]"
+            aria-label="Book on WhatsApp"
+            title="Book on WhatsApp"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:bg-muted"
           >
-            Book on WhatsApp
+            <MessageCircle className="h-4 w-4" />
           </a>
           <button
             type="button"
             onClick={openTracker}
-            className="inline-flex items-center justify-center rounded-full border border-border px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted"
+            className="inline-flex items-center justify-center rounded-full border border-border px-3.5 py-2 text-[13px] font-medium text-foreground transition-colors hover:bg-muted 2xl:px-4"
           >
             Track Order
           </button>
           <button
             type="button"
             onClick={openForm}
-            className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-soft transition-transform hover:scale-[1.02]"
+            className="inline-flex items-center justify-center rounded-full bg-primary px-3.5 py-2 text-[13px] font-medium text-primary-foreground shadow-soft transition-transform hover:scale-[1.02] 2xl:px-4"
           >
             Book Appointment
           </button>
-
         </div>
 
         <button
           aria-label="Toggle menu"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border lg:hidden"
+          className="ml-auto inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border xl:hidden"
           onClick={() => setOpen((o) => !o)}
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -90,7 +97,7 @@ export function SiteHeader() {
       </div>
 
       {open && (
-        <div className="border-t border-border bg-background lg:hidden">
+        <div className="border-t border-border bg-background xl:hidden">
           <nav className="container-page flex flex-col gap-1 py-4">
             {NAV.map((n) => (
               <Link
@@ -138,7 +145,6 @@ export function SiteHeader() {
               >
                 Book Appointment
               </button>
-
             </div>
           </nav>
         </div>
