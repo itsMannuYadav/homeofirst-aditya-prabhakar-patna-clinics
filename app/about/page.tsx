@@ -3,17 +3,11 @@ import { Award, Heart, Leaf, Users } from "lucide-react";
 import { generateSEO } from "@/lib/seo";
 
 export const metadata = generateSEO({
-  title: "About Us",
+  title: "About Homeofirst Homeopathy Clinic",
   description:
-    "Homeofirst is an online homeopathic consultation platform connecting patients with experienced doctors.",
-
+    "About Homeofirst (homeofirst.in): a homeopathy clinic and online consultation platform in Hajipur, Bihar founded around Dr. Paramjeet Prabhakar's 26+ years of clinical practice. Not affiliated with Homefirst India housing finance.",
   url: "/about",
-
-  keywords: [
-    "Homeofirst",
-    "Homeopathy",
-    "Online Doctor",
-  ],
+  keywords: ["about Homeofirst", "Prabhakar's Clinic Hajipur", "homeopathy Bihar"],
 });
 
 const VALUES = [

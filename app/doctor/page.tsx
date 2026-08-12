@@ -7,16 +7,14 @@ import drImg from "@/public/assets/dr Paramjeet Prabhakar.jpeg";
 import { generateSEO } from "@/lib/seo";
 
 export const metadata = generateSEO({
-  title: "Doctor - Dr. Paramjeet Prabhakar | Homeofirst",
+  title: "Dr. Paramjeet Prabhakar — Homeopathic Doctor",
   description:
-    "Homeofirst is an online homeopathic consultation platform connecting patients with experienced doctors.",
-
+    "Meet Dr. Paramjeet Prabhakar, homeopathy specialist at Homeofirst (homeofirst.in) / Prabhakar's Clinic, Hajipur. 26+ years of practice and 2 lakh+ patients treated across Bihar.",
   url: "/doctor",
-
   keywords: [
-    "Homeofirst",
-    "Homeopathy",
-    "Online Doctor",
+    "Dr Paramjeet Prabhakar",
+    "homeopathic doctor Hajipur",
+    "best homeopath Bihar",
   ],
 });
 

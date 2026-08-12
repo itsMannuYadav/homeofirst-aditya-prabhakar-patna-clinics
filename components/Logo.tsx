@@ -8,7 +8,7 @@ export function Logo({ className = "h-10 w-auto", showText = true }: Props) {
     <div className={`flex items-center gap-2.5 ${className}`}>
       <Image
         src={logoImg}
-        alt="Homeofirst Logo"
+        alt="Homeofirst Homeopathy Clinic"
         className="h-10 w-10 rounded-full object-cover ring-2 ring-primary-soft"
       />
       {showText && (

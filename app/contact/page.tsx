@@ -5,16 +5,14 @@ import { generateSEO } from "@/lib/seo";
 import { FAQ } from "@/components/Contact-FAQ";
 
 export const metadata = generateSEO({
-  title: "Contact Us",
+  title: "Contact Homeofirst · Hajipur Clinic & WhatsApp",
   description:
-    "Homeofirst is an online homeopathic consultation platform connecting patients with experienced doctors.",
-
+    "Contact Homeofirst Homeopathy at Prabhakar's Clinic, Near Gandhi Chowk, Station Road, Hajipur, Bihar 844101. Call +91 91351 09967 or WhatsApp for appointments and online consultation.",
   url: "/contact",
-
   keywords: [
-    "Homeofirst",
-    "Homeopathy",
-    "Online Doctor",
+    "Homeofirst contact",
+    "homeopathy clinic Station Road Hajipur",
+    "Dr Paramjeet WhatsApp appointment",
   ],
 });
 

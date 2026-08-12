@@ -1,7 +1,12 @@
 export const SITE = {
   name: "Homeofirst",
+  /** Distinctive brand string for SEO / SERP disambiguation vs similarly named brands */
+  brandFull: "Homeofirst Homeopathy",
+  legalName: "Homeofirst Homeopathy Clinic",
   tagline: "The Future of Homeopathic Care.",
   platform: "Homeofirst",
+  url: "https://homeofirst.in",
+  domain: "homeofirst.in",
   doctor: "Dr. Paramjeet Prabhakar",
   mainClinic: "Prabhakar's Clinic",
   city: "Hajipur, Bihar",
@@ -13,6 +18,9 @@ export const SITE = {
   email: "support@homeofirst.in",
   instagram: "https://www.instagram.com/homeofirst._?igsh=NDQ0YnYxb2RrN2xv",
   address: "Near Gandhi Chowk, Station Road, Hajipur, Bihar 844101",
+  /** Short entity blurb used in meta + schema so Google does not confuse us with housing-finance “Homefirst” */
+  entityDescription:
+    "Homeofirst (homeofirst.in) is a homeopathy clinic in Hajipur, Bihar led by Dr. Paramjeet Prabhakar — online consultation, in-clinic care, and medicine delivery across India. Not affiliated with Homefirst India housing finance.",
   form_link: "https://forms.gle/da3EHKfv7TCAeUNZ6",
   form_embed:
     "https://docs.google.com/forms/d/e/1FAIpQLSerciKWbEqoVy7f-AtVjx6P9TovP9fjqp9a8ooxMQ3WH9flOA/viewform?embedded=true",

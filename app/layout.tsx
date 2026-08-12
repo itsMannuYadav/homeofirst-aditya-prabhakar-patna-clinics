@@ -1,22 +1,14 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono, Inter, Manrope } from "next/font/google";
+import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { MyFirstCareWidget } from "@/components/chat/MyFirstCareWidget";
 import { BookingFormProvider } from "@/components/BookingFormModal";
 import { TrackShipmentProvider } from "@/components/TrackShipmentModal";
-import { organizationSchema } from "@/lib/schema/organisations";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { organizationSchema, websiteSchema } from "@/lib/schema/organisations";
+import { BRAND_KEYWORDS } from "@/lib/seo";
+import { SITE } from "@/lib/site";
 
 export const inter = Inter({
   subsets: ["latin"],
@@ -29,26 +21,57 @@ export const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Homeofirst - Online Homeopathy Consultation with Expert Doctors",
-  description:
-    "Homeofirst is a trusted homeopathy clinic in Hajipur, Bihar led by Dr. Paramjeet Prabhakar. Consult experienced homeopathic doctors online from the comfort of your home. Get personalized treatment, expert guidance, and doorstep medicine delivery anywhere in India through Homeofirst.",
-  keywords:
-    "online homeopathy consultation, homeopathic doctor online, homeopathy treatment India, homeopathy consultation from home, online homeopathy clinic, homeopathic medicine delivery, best homeopathic doctors in India",
-  authors: [{ name: "Homeofirst" }],
+  metadataBase: new URL(SITE.url),
+  title: {
+    default: `${SITE.brandFull} | Online Homeopathy Clinic · Hajipur, Bihar`,
+    template: `%s | ${SITE.brandFull}`,
+  },
+  description: SITE.entityDescription,
+  keywords: BRAND_KEYWORDS,
+  authors: [{ name: SITE.legalName, url: SITE.url }],
+  creator: SITE.doctor,
+  publisher: SITE.legalName,
+  applicationName: SITE.brandFull,
+  category: "Health",
+  alternates: {
+    canonical: SITE.url,
+  },
   openGraph: {
-    title: "Homeofirst - Online Homeopathy Consultation with Expert Doctors",
-    description:
-      "Access leading homeopathic doctors online and receive personalized treatment and medicine delivery from the comfort of your home.",
+    title: `${SITE.brandFull} | Online Homeopathy Clinic · Hajipur`,
+    description: SITE.entityDescription,
+    url: SITE.url,
+    siteName: SITE.brandFull,
     type: "website",
+    locale: "en_IN",
+    images: [
+      {
+        url: "/assets/HomeoFirstLogo.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Homeofirst Homeopathy Clinic logo",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Online Homeopathy Consultation in India | Homeofirst",
-    description:
-      "Consult experienced homeopathic doctors online and get personalized treatment from the comfort of your home.",
+    title: `${SITE.brandFull} | Online Homeopathy Clinic`,
+    description: SITE.entityDescription,
+    images: ["/assets/HomeoFirstLogo.jpg"],
   },
-  alternates: {
-    canonical: "https://homeofirst.in",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  other: {
+    "geo.region": "IN-BR",
+    "geo.placename": "Hajipur",
   },
 };
 
@@ -64,22 +87,26 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="en-IN"
       className={`${inter.variable} ${manrope.variable} antialiased`}
     >
       <body className="flex min-h-screen flex-col">
-         <script
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(organizationSchema),
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteSchema),
+          }}
+        />
         <BookingFormProvider>
           <TrackShipmentProvider>
             <SiteHeader />
-            <main className="flex-1">
-              {children}
-            </main>
+            <main className="flex-1">{children}</main>
             <SiteFooter />
             <MyFirstCareWidget />
           </TrackShipmentProvider>

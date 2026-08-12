@@ -38,14 +38,14 @@ export default function HeroSection() {
           <div className="reveal">
             <div className="inline-flex items-center gap-2 rounded-full bg-background/70 px-3 py-1.5 text-xs font-medium text-foreground ring-1 ring-border">
               <Leaf className="h-3.5 w-3.5 text-accent" />
-              Award Winning Homeopathy Clinic · Hajipur
+              Homeofirst Homeopathy Clinic · Hajipur
             </div>
             <h1 className="mt-5 font-serif text-4xl leading-[1.05] text-foreground md:text-5xl lg:text-6xl">
-              Gentle homeopathy.<br />
+              Homeofirst homeopathy.<br />
               <span className="text-primary italic">Lasting healing.</span>
             </h1>
             <p className="mt-5 max-w-xl text-lg text-muted-foreground">
-              The best homeopathic doctors, one video call away. Personalized treatment and medicine delivery, right at your doorstep.
+              Online and in-clinic homeopathic care with Dr. Paramjeet Prabhakar at homeofirst.in — personalized treatment and medicine delivery across India.
             </p>
             <div className="mt-5 max-w-xl text-lg text-muted-foreground">
               <div className="flex gap-2"><PartyPopper color="#225a39" strokeWidth={2.25}/> <span>First consultation absolutely free </span></div>

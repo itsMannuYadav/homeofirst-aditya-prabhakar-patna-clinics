@@ -7,20 +7,15 @@ import { SocialGallery } from "@/components/SocialGallery";
 import { generateSEO } from "@/lib/seo";
 
 export const metadata = generateSEO({
-  title: "Best Homeopathic Clinic in Patna",
-
+  title: "Homeofirst Homeopathy Clinic · Hajipur & Online",
   description:
-    "Consult experienced homeopathic doctors online. Get treatment for skin diseases, hair fall, arthritis, allergies and more.",
-
+    "Homeofirst (homeofirst.in) — trusted homeopathy clinic in Hajipur, Bihar led by Dr. Paramjeet Prabhakar. Online consultation, in-clinic care at Prabhakar's Clinic, and doorstep medicine delivery across India.",
   url: "/",
-
   keywords: [
-    "homeopathy",
-    "homeopathic doctor",
-    "patna",
-    "online consultation",
-    "skin treatment",
-    "hair fall",
+    "homeopathy clinic Hajipur",
+    "homeopathic doctor online",
+    "best homeopathy clinic Bihar",
+    "skin hair arthritis homeopathy",
   ],
 });
 

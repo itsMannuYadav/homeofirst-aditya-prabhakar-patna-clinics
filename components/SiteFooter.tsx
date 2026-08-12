@@ -74,7 +74,7 @@ export function SiteFooter() {
 
       <div className="border-t border-primary-foreground/15">
         <div className="container-page flex flex-col items-center justify-between gap-3 py-5 text-xs text-primary-foreground/70 md:flex-row">
-          <p>© {new Date().getFullYear()} Homeofirst. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Homeofirst Homeopathy (homeofirst.in). All rights reserved.</p>
           <p>Made with care in Hajipur, Bihar.</p>
         </div>
       </div>

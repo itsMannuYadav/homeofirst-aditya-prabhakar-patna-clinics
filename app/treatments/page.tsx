@@ -4,6 +4,19 @@ import { SITE } from "@/lib/site";
 import { MessageCircle } from "lucide-react";
 import Image from "next/image";
 import { GROUPS } from "@/data/treatments";
+import { generateSEO } from "@/lib/seo";
+
+export const metadata = generateSEO({
+  title: "Homeopathy Treatments at Homeofirst",
+  description:
+    "Homeofirst (homeofirst.in) treats skin, hair, joints, respiratory, digestive, women's health, pediatric, lifestyle and chronic conditions with gentle homeopathy under Dr. Paramjeet Prabhakar.",
+  url: "/treatments",
+  keywords: [
+    "homeopathy treatments",
+    "homeopathic treatment for skin",
+    "arthritis homeopathy Hajipur",
+  ],
+});
 
 export default function Treatments() {
   return (

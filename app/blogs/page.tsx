@@ -6,10 +6,15 @@ import { BlogSearchFilter } from "@/components/blog/BlogSearchFilter";
 import { BookOpen, Sparkles } from "lucide-react";
 
 export const metadata = generateSEO({
-  title: "Health & Homeopathy Blog | Medical Insights",
-  description: "Read evidence-based homeopathic treatment guides for psoriasis, hair loss, arthritis, skin disease and holistic health by Dr. Paramjeet Prabhakar.",
+  title: "Homeopathy Blog by Homeofirst",
+  description:
+    "Evidence-based homeopathy guides from Homeofirst (homeofirst.in) and Dr. Paramjeet Prabhakar — psoriasis, hair fall, arthritis, skin disease, and holistic health.",
   url: "/blogs",
-  keywords: ["homeopathy blog", "homeopathic treatment", "psoriasis homeopathy", "hair fall remedies", "arthritis homeo relief"],
+  keywords: [
+    "homeopathy blog",
+    "homeopathic treatment guides",
+    "Homeofirst blog",
+  ],
 });
 
 export default function BlogsListingPage() {

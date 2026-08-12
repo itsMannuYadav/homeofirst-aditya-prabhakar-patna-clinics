@@ -2,6 +2,19 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { SITE } from "@/lib/site";
 import { MapPin, Star, Building2, MessageCircle, Phone, Sparkles, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { generateSEO } from "@/lib/seo";
+
+export const metadata = generateSEO({
+  title: "Homeofirst Clinics · Hajipur & Patna",
+  description:
+    "Visit Homeofirst Homeopathy at Prabhakar's Clinic, Station Road, Hajipur, Bihar — and follow our upcoming Patna expansion. Online consultations available across India via homeofirst.in.",
+  url: "/clinics",
+  keywords: [
+    "Homeofirst clinic Hajipur",
+    "Prabhakar's Clinic Station Road",
+    "homeopathy clinic Patna coming soon",
+  ],
+});
 
 export default function Clinics() {
   return (
