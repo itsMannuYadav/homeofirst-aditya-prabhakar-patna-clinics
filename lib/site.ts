@@ -16,6 +16,7 @@ export const SITE = {
   form_link: "https://forms.gle/da3EHKfv7TCAeUNZ6",
   form_embed:
     "https://docs.google.com/forms/d/e/1FAIpQLSerciKWbEqoVy7f-AtVjx6P9TovP9fjqp9a8ooxMQ3WH9flOA/viewform?embedded=true",
+  india_post_track: "https://www.indiapost.gov.in/",
   hours: "Mon – Sat · 9:00 AM – 8:00 PM (Sun: by appointment)",
   google_map_address: "https://share.google/lqSC2bca0ImmwuXQV",
   stats: {

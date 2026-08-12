@@ -3,8 +3,11 @@ import Link from "next/link";
 import { Mail, MapPin, Phone, Clock } from "lucide-react";
 import { Logo } from "./Logo";
 import { SITE } from "@/lib/site";
+import { useTrackShipment } from "./TrackShipmentModal";
 
 export function SiteFooter() {
+  const { openTracker } = useTrackShipment();
+
   return (
     <footer className="mt-24 border-t border-border bg-primary text-primary-foreground">
       <div className="container-page grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4">
@@ -56,6 +59,15 @@ export function SiteFooter() {
             <li><Link href="/treatments">Treatments</Link></li>
             <li><Link href="/gallery">Gallery</Link></li>
             <li><Link href="/contact">Contact</Link></li>
+            <li>
+              <button
+                type="button"
+                onClick={openTracker}
+                className="text-left hover:text-primary-foreground"
+              >
+                Track Order
+              </button>
+            </li>
           </ul>
         </div>
       </div>

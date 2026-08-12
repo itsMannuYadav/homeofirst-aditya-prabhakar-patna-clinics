@@ -6,6 +6,7 @@ import { Menu, X, Phone } from "lucide-react";
 import { Logo } from "./Logo";
 import { SITE } from "@/lib/site";
 import { useBookingForm } from "./BookingFormModal";
+import { useTrackShipment } from "./TrackShipmentModal";
 
 const NAV = [
   { to: "/", label: "Home" },
@@ -21,6 +22,7 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const { openForm } = useBookingForm();
+  const { openTracker } = useTrackShipment();
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur-md">
@@ -61,6 +63,13 @@ export function SiteHeader() {
           >
             Book on WhatsApp
           </a>
+          <button
+            type="button"
+            onClick={openTracker}
+            className="inline-flex items-center justify-center rounded-full border border-border px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted"
+          >
+            Track Order
+          </button>
           <button
             type="button"
             onClick={openForm}
@@ -109,6 +118,16 @@ export function SiteHeader() {
               >
                 Book on WhatsApp
               </a>
+              <button
+                type="button"
+                onClick={() => {
+                  setOpen(false);
+                  openTracker();
+                }}
+                className="rounded-full border border-border px-4 py-2.5 text-center text-sm font-medium text-foreground"
+              >
+                Track Order
+              </button>
               <button
                 type="button"
                 onClick={() => {
