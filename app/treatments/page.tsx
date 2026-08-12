@@ -31,22 +31,34 @@ export default function Treatments() {
         </div>
       </section>
 
-      <section className="py-20">
-        <div className="container-page grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <section className="py-16 sm:py-20">
+        <div className="container-page grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
           {GROUPS.map((g) => (
-            <div key={g.title} className="rounded-2xl border border-border bg-card p-7 shadow-soft">
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary-soft text-2xl">
-                {g.color}
+            <div
+              key={g.title}
+              className="group overflow-hidden rounded-2xl border border-border bg-card shadow-soft"
+            >
+              <div className="overflow-hidden bg-primary-soft">
+                <Image
+                  src={g.image}
+                  alt={g.imageAlt}
+                  width={384}
+                  height={384}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className="aspect-square h-auto w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                />
               </div>
-              <h3 className="font-serif text-xl text-foreground">{g.title}</h3>
-              <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-                {g.items.map((i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent" />
-                    {i}
-                  </li>
-                ))}
-              </ul>
+              <div className="p-5 sm:p-6 md:p-7">
+                <h3 className="font-serif text-lg text-foreground sm:text-xl">{g.title}</h3>
+                <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+                  {g.items.map((i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent" />
+                      {i}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           ))}
         </div>

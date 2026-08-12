@@ -4,6 +4,15 @@ import slide3 from "@/public/assets/Hero Section Slide Show Image 3.jpeg";
 import slide4 from "@/public/assets/Hero Section Slide Show Image 4.jpeg";
 import slide5 from "@/public/assets/Hero Section Slide Show Image 5.jpeg";
 import slide6 from "@/public/assets/Hero Section Slide Show Image 6.jpeg";
+import skinHair from "@/public/assets/treatments/treatment-skin-hair--generated-by-mannu-yadav.webp";
+import jointsBones from "@/public/assets/treatments/treatment-joints-bones--generated-by-mannu-yadav.webp";
+import respiratory from "@/public/assets/treatments/treatment-respiratory--generated-by-mannu-yadav.webp";
+import digestive from "@/public/assets/treatments/treatment-digestive--generated-by-mannu-yadav.webp";
+import womensHealth from "@/public/assets/treatments/treatment-womens-health--generated-by-mannu-yadav.webp";
+import pediatric from "@/public/assets/treatments/treatment-pediatric--generated-by-mannu-yadav.webp";
+import lifestyle from "@/public/assets/treatments/treatment-lifestyle--generated-by-mannu-yadav.webp";
+import chronicMind from "@/public/assets/treatments/treatment-chronic-mind--generated-by-mannu-yadav.webp";
+import type { StaticImageData } from "next/image";
 
 export const HERO_SLIDES = [
   { img: slide1, alt: "Dr. Paramjeet Prabhakar receiving prestigious homeopathy award" },
@@ -14,15 +23,20 @@ export const HERO_SLIDES = [
   { img: slide6, alt: "Homeofirst clinic achievement award" },
 ];
 
-export const TREATMENTS = [
-  { icon: "🌿", title: "Skin & Hair", desc: "Eczema, psoriasis, acne, hair fall, vitiligo." },
-  { icon: "🦴", title: "Joints & Arthritis", desc: "Knee pain, rheumatoid arthritis, gout, sciatica." },
-  { icon: "🫁", title: "Respiratory", desc: "Asthma, allergic rhinitis, sinusitis, recurring cough." },
-  { icon: "🍃", title: "Digestive", desc: "Acidity, IBS, constipation, ulcers, liver care." },
-  { icon: "🌸", title: "Women's Health", desc: "PCOS, menstrual issues, fertility, menopause." },
-  { icon: "🧒", title: "Pediatric Care", desc: "Recurring infections, immunity, growth, behavior." },
-  { icon: "💭", title: "Lifestyle Disorders", desc: "Diabetes, thyroid, hypertension, obesity." },
-  { icon: "🌙", title: "Chronic Ailments", desc: "Migraine, anxiety, sleep issues, autoimmune." },
+export const TREATMENTS: {
+  image: StaticImageData;
+  imageAlt: string;
+  title: string;
+  desc: string;
+}[] = [
+  { image: skinHair, imageAlt: "Skin and hair care illustration", title: "Skin & Hair", desc: "Eczema, psoriasis, acne, hair fall, vitiligo." },
+  { image: jointsBones, imageAlt: "Joints and arthritis care illustration", title: "Joints & Arthritis", desc: "Knee pain, rheumatoid arthritis, gout, sciatica." },
+  { image: respiratory, imageAlt: "Respiratory care illustration", title: "Respiratory", desc: "Asthma, allergic rhinitis, sinusitis, recurring cough." },
+  { image: digestive, imageAlt: "Digestive care illustration", title: "Digestive", desc: "Acidity, IBS, constipation, ulcers, liver care." },
+  { image: womensHealth, imageAlt: "Women's health care illustration", title: "Women's Health", desc: "PCOS, menstrual issues, fertility, menopause." },
+  { image: pediatric, imageAlt: "Pediatric care illustration", title: "Pediatric Care", desc: "Recurring infections, immunity, growth, behavior." },
+  { image: lifestyle, imageAlt: "Lifestyle disorders care illustration", title: "Lifestyle Disorders", desc: "Diabetes, thyroid, hypertension, obesity." },
+  { image: chronicMind, imageAlt: "Chronic ailments care illustration", title: "Chronic Ailments", desc: "Migraine, anxiety, sleep issues, autoimmune." },
 ];
 
 export const TESTIMONIALS = [
