@@ -31,8 +31,8 @@ export default function HeroSection() {
     <>
     <section className="relative overflow-hidden bg-gradient-hero">
         <div
-          className="pointer-events-none absolute inset-0 opacity-[0.08]"
-          style={{ backgroundImage: "url('/assets/leaves-bg.jpg')", backgroundSize: "cover" }}
+          className="pointer-events-none absolute inset-0 opacity-15"
+          style={{ backgroundImage: "url('/assets/independence-day-bg.png')", backgroundSize: "cover" }}
         />
         <div className="container-page relative grid items-center gap-12 py-16 md:py-24 lg:grid-cols-2 lg:py-28">
           <div className="reveal">
@@ -137,8 +137,8 @@ export default function HeroSection() {
       {/* INTRO VEDIO */}
       <section className="bg-primary-soft/40 py-20 relative overflow-hidden bg-gradient-hero">
         <div
-          className="pointer-events-none absolute inset-0 opacity-[0.08]"
-          style={{ backgroundImage: "url('/assets/leaves-bg.jpg')", backgroundSize: "cover" }}
+          className="pointer-events-none absolute inset-0 opacity-15"
+          style={{ backgroundImage: "url('/assets/independence-day-bg.png')", backgroundSize: "cover" }}
         />
         <div className="container-page">
           <SectionHeading eyebrow="Why Choose Homeofirst" title="Dr. Paramjeet Prabhakar" />

@@ -32,8 +32,8 @@ export default function Doctor() {
     <>
       <section className="bg-gradient-hero py-16 md:py-24 relative overflow-hidden bg-gradient-hero">
         <div
-          className="pointer-events-none absolute inset-0 opacity-[0.08]"
-          style={{ backgroundImage: "url('/assets/leaves-bg.jpg')", backgroundSize: "cover" }}
+          className="pointer-events-none absolute inset-0 opacity-15"
+          style={{ backgroundImage: "url('/assets/independence-day-bg.png')", backgroundSize: "cover" }}
         />
 
         <div className="container-page grid items-center gap-12 lg:grid-cols-[5fr_6fr]">

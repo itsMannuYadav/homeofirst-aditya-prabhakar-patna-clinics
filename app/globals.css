@@ -6,8 +6,10 @@
   --radius: 0.75rem;
 
   /* Cream background, deep forest text */
-  --background: oklch(0.985 0.012 95);     /* warm cream */
-  --foreground: oklch(0.22 0.03 155);       /* deep forest ink */
+  --background: oklch(0.985 0.012 95);
+  /* warm cream */
+  --foreground: oklch(0.22 0.03 155);
+  /* deep forest ink */
   --ink: oklch(0.18 0.02 155);
 
   --cream: oklch(0.97 0.02 95);
@@ -61,7 +63,11 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  h1, h2, h3, h4, h5 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
     font-family: var(--font-heading);
     letter-spacing: -0.02em;
     font-weight: 500;
@@ -69,9 +75,17 @@
 }
 
 @layer utilities {
-  .font-serif { font-family: var(--font-serif); }
-  .font-sans { font-family: var(--font-sans); }
-  .font-inter { font-family: var(--font-inter); }
+  .font-serif {
+    font-family: var(--font-serif);
+  }
+
+  .font-sans {
+    font-family: var(--font-sans);
+  }
+
+  .font-inter {
+    font-family: var(--font-inter);
+  }
 
   .container-page {
     width: 100%;
@@ -81,13 +95,26 @@
   }
 
   @media (min-width: 768px) {
-    .container-page { padding-inline: 2rem; }
+    .container-page {
+      padding-inline: 2rem;
+    }
   }
 
-  .bg-gradient-hero { background: var(--gradient-hero); }
-  .bg-gradient-leaf { background: var(--gradient-leaf); }
-  .shadow-soft { box-shadow: var(--shadow-soft); }
-  .shadow-glow { box-shadow: var(--shadow-glow); }
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .bg-gradient-leaf {
+    background: var(--gradient-leaf);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
 
   .leaf-divider {
     display: block;
@@ -102,15 +129,32 @@
   }
 
   @keyframes reveal {
-    from { opacity: 0; transform: translateY(16px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   @keyframes float-leaf {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-8px) rotate(3deg); }
+
+    0%,
+    100% {
+      transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+      transform: translateY(-8px) rotate(3deg);
+    }
   }
-  .animate-float { animation: float-leaf 6s ease-in-out infinite; }
+
+  .animate-float {
+    animation: float-leaf 6s ease-in-out infinite;
+  }
 }
 
 @theme inline {

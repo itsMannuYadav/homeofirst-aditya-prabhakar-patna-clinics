@@ -9,8 +9,8 @@ export function Cta() {
         <section className="container-page pb-20">
         <div className="relative overflow-hidden rounded-4xl bg-primary px-8 py-16 text-center text-primary-foreground md:px-16 md:py-20">
             <div
-            className="pointer-events-none absolute inset-0 opacity-10"
-            style={{ backgroundImage: "url('/assets/leaves-bg.jpg')", backgroundSize: "cover" }}
+            className="pointer-events-none absolute inset-0 opacity-20"
+            style={{ backgroundImage: "url('/assets/independence-day-bg.png')", backgroundSize: "cover" }}
             />
             <div className="relative">
             <h2 className="font-serif text-3xl md:text-5xl">Begin your healing journey today</h2>
