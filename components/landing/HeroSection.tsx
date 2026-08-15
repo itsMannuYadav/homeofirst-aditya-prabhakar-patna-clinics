@@ -11,27 +11,27 @@ import { Stat } from "../Stats";
 import { SectionHeading } from "../SectionHeading";
 
 export default function HeroSection() {
-    const [emblaRef] = useEmblaCarousel({ loop: true, duration: 30 }, [
-        Autoplay({ delay: 3000, stopOnInteraction: false }),
-    ]);
+  const [emblaRef] = useEmblaCarousel({ loop: true, duration: 30 }, [
+    Autoplay({ delay: 3000, stopOnInteraction: false }),
+  ]);
 
-    const [selectedImg, setSelectedImg] = useState<string | StaticImageData | null>(null);
+  const [selectedImg, setSelectedImg] = useState<string | StaticImageData | null>(null);
 
-    // Prevent scrolling when lightbox is open
-    useEffect(() => {
-        if (selectedImg) {
-        document.body.style.overflow = "hidden";
-        } else {
-        document.body.style.overflow = "unset";
-        }
-        return () => { document.body.style.overflow = "unset"; };
-    }, [selectedImg]);
+  // Prevent scrolling when lightbox is open
+  useEffect(() => {
+    if (selectedImg) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => { document.body.style.overflow = "unset"; };
+  }, [selectedImg]);
 
-    return (
+  return (
     <>
-    <section className="relative overflow-hidden bg-gradient-hero">
+      <section className="relative overflow-hidden bg-gradient-hero">
         <div
-          className="pointer-events-none absolute inset-0 opacity-15"
+          className="pointer-events-none absolute inset-0 opacity-35"
           style={{ backgroundImage: "url('/assets/independence-day-bg.png')", backgroundSize: "cover" }}
         />
         <div className="container-page relative grid items-center gap-12 py-16 md:py-24 lg:grid-cols-2 lg:py-28">
@@ -48,8 +48,8 @@ export default function HeroSection() {
               Online and in-clinic homeopathic care with Dr. Paramjeet Prabhakar at homeofirst.in — personalized treatment and medicine delivery across India.
             </p>
             <div className="mt-5 max-w-xl text-lg text-muted-foreground">
-              <div className="flex gap-2"><PartyPopper color="#225a39" strokeWidth={2.25}/> <span>First consultation absolutely free </span></div>
-              <div className="flex gap-2"><Truck color="#225a39" strokeWidth={2.5}/>  <span>Doorstep Delivery of Medicines</span></div>
+              <div className="flex gap-2"><PartyPopper color="#225a39" strokeWidth={2.25} /> <span>First consultation absolutely free </span></div>
+              <div className="flex gap-2"><Truck color="#225a39" strokeWidth={2.5} />  <span>Doorstep Delivery of Medicines</span></div>
             </div>
 
             <div className="mt-7 flex flex-wrap items-center gap-3">
@@ -75,7 +75,7 @@ export default function HeroSection() {
               <div className="flex items-center gap-2">
                 <div className="flex">
                   {[0, 1, 2, 3, 4].map((i) => (
-                    i === 4 ? <StarHalf key={i} className="h-4 w-4 fill-gold text-gold" />:<Star key={i} className="h-4 w-4 fill-gold text-gold" />
+                    i === 4 ? <StarHalf key={i} className="h-4 w-4 fill-gold text-gold" /> : <Star key={i} className="h-4 w-4 fill-gold text-gold" />
                   ))}
                 </div>
                 <span><strong className="text-foreground">4.7</strong> patient rating</span>
@@ -92,9 +92,9 @@ export default function HeroSection() {
               <div className="embla__container flex">
                 {HERO_SLIDES.map((slide, index) => (
                   <div key={index} className="embla__slide min-w-0 flex-[0_0_100%]">
-                    <button 
-                       onClick={() => setSelectedImg(slide.img)}
-                       className="group relative block w-full h-full cursor-zoom-in"
+                    <button
+                      onClick={() => setSelectedImg(slide.img)}
+                      className="group relative block w-full h-full cursor-zoom-in"
                     >
                       <Image
                         src={slide.img}
@@ -159,30 +159,30 @@ export default function HeroSection() {
         </div>
       </section>
       {/* LIGHTBOX MODAL */}
-        {selectedImg && (
-        <div 
-            className="fixed inset-0 z-100 flex items-center justify-center bg-ink/95 p-4 md:p-10 transition-all animate-in fade-in duration-300"
-            onClick={() => setSelectedImg(null)}
+      {selectedImg && (
+        <div
+          className="fixed inset-0 z-100 flex items-center justify-center bg-ink/95 p-4 md:p-10 transition-all animate-in fade-in duration-300"
+          onClick={() => setSelectedImg(null)}
         >
-            <button 
+          <button
             className="absolute right-6 top-6 z-110 rounded-full bg-white/10 p-2 text-white hover:bg-white/20 transition-colors"
             onClick={(e) => { e.stopPropagation(); setSelectedImg(null); }}
-            >
+          >
             <X className="h-6 w-6" />
-            </button>
-            
-            <div 
+          </button>
+
+          <div
             className="relative max-h-full max-w-full overflow-hidden rounded-xl shadow-2xl animate-in zoom-in-95 duration-300"
             onClick={(e) => e.stopPropagation()}
-            >
+          >
             <Image
-                src={selectedImg} 
-                alt="Hero Preview" 
-                className="max-h-[90vh] w-auto object-contain"
+              src={selectedImg}
+              alt="Hero Preview"
+              className="max-h-[90vh] w-auto object-contain"
             />
-            </div>
+          </div>
         </div>
-        )}
+      )}
     </>
-    )
+  )
 }
